@@ -1,0 +1,28 @@
+.Header-header{
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent;
+  /* border-bottom: 1px solid var(--primary_color); */
+}
+.Header-header h1{
+  /* padding: 0%; */
+  padding: 1%;
+  font-size: 1.6rem;
+  margin: 0;
+
+}
+
+
+@media screen and (max-width:1000px){
+  .Header-header h1{
+      font-size: 1.3rem ;
+
+  }
+  
+}
+@media screen  and (max-width:600px){
+  .Header-header h1{
+    font-size: 1rem;
+  }
+  
+}

@@ -1,0 +1,108 @@
+.Nav{
+    width: 100%;
+    height: auto;
+
+}
+
+.Nav-header{
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    padding: 15px 0px;
+}
+#villageName{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu-logo{
+    display: none;
+}
+.menu-close-logo{
+    display: none;
+}
+#options-menu{
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+
+}
+.Nav div span{
+    font-size: 14px;
+}
+.Nav div span a{
+    text-decoration: none;
+    padding: 10px 20px 10px 20px;
+    border-radius: 40px;
+    margin-right: 30px;
+    /* background-color: var(--secondry_color); */
+    border: 1px solid;
+}
+#villageName a {
+    background-color:transparent;
+    border-radius:0;
+    padding: 10px 20px 10px 20px;
+    font-size:30px;
+    font-family:serif;
+    border: none;
+
+}
+
+@media screen and (max-width:1000px){
+    .Nav div span a{
+        margin-right: 10px;
+        font-size: 0.5rem;
+    }
+  
+    
+  }
+  @media screen  and (max-width:600px){
+    .Nav{
+        
+        height: 50px;
+    }
+    .Nav-header{
+        height: 50px;
+        padding: 0;
+    }
+    #villageName a{
+        font-size: 20px;
+        background-color:transparent;
+        border-radius:0;
+    }
+    #options-menu{
+        flex-direction: column;
+        background-color: var(--background_color);
+        border-radius: 0px 0px 50px 50px;
+        height: 300px;
+        width: 200px;
+        gap: 30px;
+        margin-top: 45px;
+        display: none;
+        z-index: 1;
+        animation: opacityAnimation 1s ease;
+    }
+    #menu-logo{
+        display: inline-block;
+        font-size: 30px;
+    }
+    #menu-logo svg{
+        padding: 10px 10px !important ;
+    }
+    .menu-close-logo{
+        display: inline-block;
+    }
+    .Nav div span a{
+        text-decoration: none;
+        padding: 10px 20px 10px 20px;
+        margin: 0;
+        /* border-radius: 40px; */
+        background-color: var(--secondry_color);
+    }
+    
+    
+  }

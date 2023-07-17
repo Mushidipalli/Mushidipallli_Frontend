@@ -1,0 +1,149 @@
+.employee-list{
+    padding: 5px;
+    background-color: aliceblue;
+    height: 90vh;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.search-section{
+    display: flex;
+    padding: 10px;
+    justify-content: space-around;
+    align-items: center;
+}
+.search-section input{
+    width: 50%;
+    padding: 20px;
+    border: 1px solid;
+    border-radius: 40px;
+    
+}
+.search-nav-options{
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-profile-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.list-section{
+    width: 50%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    animation: opacityAnimation 1s ease;
+   
+}
+.list-section div{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 40px;
+    background-color:#d0f5e9;
+    box-shadow: 0.1px 0px 1px 1px #d0f5e9;
+}
+.list-section div img{
+    width: 50px;
+    height: 50px ;
+    border-radius: 50px;
+}
+.list-section div span{
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+}
+.img-name-container{
+    display: flex;
+    
+}
+.profile-section{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+    animation: opacityAnimation 1s ease;
+   
+}
+.profile-section p{
+    margin: 0;
+}
+
+.profile-back-button{
+    position: fixed;
+    top: 50%;
+    left: 10px;
+    padding: 10px 20px;
+    border-radius: 40px;
+    background-color: var(--background_color);
+}
+.profile-back-button:hover{
+    cursor: pointer;
+}
+
+.employee{
+    display: 0;
+}
+/* .active{
+    display: flex;
+    animation: opacityAnimation 1s ease;
+} */
+.closelist{
+    display: none;
+}
+.profileImage{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+#logout-in-home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+@keyframes opacityAnimation {
+    from{
+        opacity: -1;
+    }
+    to{
+        opacity: 1;
+    }
+    
+}
+@media screen  and (max-width:600px){
+    .list-section{
+        width: 90%;
+        min-width: 350px;
+    }
+    .profile-section{
+        width: 90%;
+    }
+    .search-section input{
+        padding: 10px;
+    }
+    .search-nav-options{
+        font-size: 15px;
+        width: 35%;
+        gap:10px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+
+    }
+   
+    #logout-in-home{
+        display: none;
+    }
+    
+
+}
