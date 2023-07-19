@@ -2,16 +2,19 @@ import './Nav.css';
 import {HiMenu} from 'react-icons/hi' ;
 import {GrClose} from 'react-icons/gr';
 import { Link } from 'react-router-dom';
-function Nav() {
+function Nav(props) {
 
   function openMenu (){
     const menuButton = document.getElementById('menu-logo');
     menuButton.style.display='none';
     const options = document.getElementById('options-menu');
     options.style.display = 'flex';
+  }
 
-    
-
+  const adminLogout = ()=>{
+    localStorage.removeItem("AdminAuthToken");
+   
+    props.adminLogout();
   }
 
   function closeMenu (){
@@ -31,27 +34,30 @@ function Nav() {
         
         <header className="Nav-header">
             <div id='villageName' >
-                <span> <Link to='/' >MUSHIDIPALLI</Link></span>
+              <span> <Link to='/' >MUSHIDIPALLI</Link></span>
             </div>
             <div id='menu-logo' onClick={()=>openMenu()} >
-                <HiMenu />
+              <HiMenu />
 
             </div>
           <div id='options-menu'>
             <span className='menu-close-logo' onClick={()=>closeMenu()} >
-                <GrClose/>
+              <GrClose/>
             </span>
             <span>
-                <Link to='/' >Home</Link>
+              <Link to='/' >Home</Link>
             </span>
             <span>
-                 <Link to='/people' >People</Link>
+              <Link to='/people' >People</Link>
             </span>
             <span>
-                 <Link to='sf' >Contact</Link>
+              <Link to='sf' >Contact</Link>
             </span>
             <span>
-                 <Link to='sf' >About</Link>             
+              {props.admin?<div onClick={()=>adminLogout()} >Logout</div>:<Link to='/admin/login' >Admin</Link>}
+            </span>
+            <span>
+              <Link to='sf' >About</Link>             
             </span>
            
             

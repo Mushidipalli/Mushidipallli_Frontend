@@ -24,6 +24,9 @@
     display: flex;
     justify-content: space-between;
 }
+.search-nav-options a:hover{
+    background-color:transparent;
+}
 
 .list-profile-container{
     display: flex;
@@ -37,7 +40,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    animation: opacityAnimation 1s ease;
+    animation: opacityAnimation 0.5s ease-in-out;
    
 }
 .list-section div{
@@ -65,10 +68,15 @@
 .profile-section{
     display: flex;
     width: 50%;
+    opacity: 1;
     flex-direction: column;
     align-items: center;
-    animation: opacityAnimation 1s ease;
+    
    
+}
+.user-details{
+    animation: opacityAnimation 0.5s ease-in-out;
+ 
 }
 .profile-section p{
     margin: 0;

@@ -7,6 +7,13 @@
     align-items: center;
 
 }
+.account-profile-details input{
+    padding: 10px;
+    width: 100%;
+    border-radius: 40px;
+    border: none;
+
+}
 .account-container{
     width: 60%;
     padding: 20px;
@@ -44,7 +51,13 @@
     width: 50%;
     padding: 10px;
     border-radius: 20px;
+    border: none;
+    background-color: #345d67;
+    margin-top: 10px;
 
+}
+.profile-buttons button:hover{
+    background-color: aquamarine;
 }
 
 

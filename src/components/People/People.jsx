@@ -1,6 +1,7 @@
 import './People.css';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import {toast} from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import {VscVerifiedFilled} from 'react-icons/vsc';
 import LoadingPage from '../LoadingPage/LoadingPage';
@@ -12,24 +13,121 @@ const People = (props) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedEmployee, setSelectedEmployee] = useState(null);
   const [listDecistion, setListDcsition] = useState(false);
+  const admin = props.admin;
   
-  const [admin,setAdmin] = useState(false);
+  
+  
 
   const handleSearchTermChange = (e) => {
     setSearchTerm(e.target.value);
-  };
+  }
+
+
+
+  const userVerification= async(data)=>{
+
+    const dataa ={
+      id:data
+    }
+
+    const authToken = localStorage.getItem('AdminAuthToken');
+  
+
+  try {
+    // Simulating an asynchronous API call
+    const response = await fetch('https://mushidipalli-back-end.onrender.com/admin/users/verify', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'authorization': authToken
+      },
+      body: JSON.stringify(dataa)
+     
+    });
+       await response.json();
+       
+      if(response.ok){
+        toast.success('User Verified Successful', {
+          position: toast.POSITION.TOP_RIGHT
+          
+        });
+        
+       
+      }else{
+        toast.warning('Update faild', {
+          position: toast.POSITION.TOP_RIGHT
+          
+        });
+
+      }
+
+  } catch (error) {
+   
+
+  }
+
+  }
+
+
+
   const handleListDecistion = () => {
     setListDcsition(false);
     setSelectedEmployee("");
   }
+
+
   const handleEmployeeClick = (employee) => {
     setSelectedEmployee(employee);
     setListDcsition(true);
     
   };
 
-  const handleAdminChange = ()=>{
-    setAdmin(true);
+
+  const userDeletion = async (data)=>{
+
+
+    const dataa ={
+      id:data
+    }
+
+    const authToken = localStorage.getItem('AdminAuthToken');
+  
+
+  try {
+    // Simulating an asynchronous API call
+    const response = await fetch('https://mushidipalli-back-end.onrender.com/admin/users/delete', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'authorization': authToken
+      },
+      body: JSON.stringify(dataa)
+     
+    });
+       await response.json();
+       
+      if(response.ok){
+        toast.success('User Deleted Successful', {
+          position: toast.POSITION.TOP_RIGHT
+          
+        });
+        
+       
+      }else{
+        toast.warning('faild to Delete', {
+          position: toast.POSITION.TOP_RIGHT
+          
+        });
+
+      }
+
+  } catch (error) {
+   
+
+  }
+
+
+    
   }
  
 
@@ -45,7 +143,7 @@ const People = (props) => {
   );
 
   return (
-    props.isLoading ? (<LoadingPage admin={handleAdminChange} />) :
+    props.isLoading ? (<LoadingPage  />) :
     <div className="employee-list">
       <div className="search-section">
        
@@ -58,7 +156,7 @@ const People = (props) => {
         {props.isLogin ? (
           <div className='search-nav-options' >
           <span  >
-           <Link to="/profile"><img style={{width:'50px',height:'50px',borderRadius:'50%'}} alt='profile' src={props.accountUser.image}/> </Link>
+           <Link to="/profile"><img style={{width:'50px',height:'50px',borderRadius:'50%',boxShadow: '0.1px 0px 0px 5px white',}} alt='profile' src={props.accountUser.image}/> </Link>
           </span>
           <span id='logout-in-home' style={{cursor:'pointer'}} onClick={handleLogout} >
             LogOut
@@ -110,7 +208,7 @@ const People = (props) => {
       </div>
       <div className="profile-section">
         {selectedEmployee ? (
-          <div>
+          <div className='user-details'>
             <p onClick={handleListDecistion} className='profile-back-button' >Back</p>
             <h3 style={{fontSize:'2rem',margin:'0'}}>Profile</h3>
             <img alt='person_image' className='profileImage' src={selectedEmployee.image} />
@@ -125,12 +223,19 @@ const People = (props) => {
               selectedEmployee.verified ? (<p style={{color:'green'}} >Verified</p>) : (<p style={{color:'red'}} >Not Verified</p>)
 
             }
-            {admin ? (
-              selectedEmployee.verified ? (
-                <p>verified</p>
-              ):<button>Verify</button>
+            {admin ?
+               <div>
+                {
+                  selectedEmployee.verified ? (
+                    <p>verified</p>
+                  ): <button onClick={()=>userVerification(selectedEmployee._id)} >Verify</button>
 
-            ):''}
+                }
+
+                 <button onClick={()=>userDeletion(selectedEmployee._id)} >Delete</button>
+                
+      
+            </div>:''}
             
             
             {/* Add more employee details here */}

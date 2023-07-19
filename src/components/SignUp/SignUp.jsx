@@ -15,6 +15,7 @@ const SignUp = (props) => {
   const [presentAddress, setPresentAddress] = useState('');
   const [password,setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [signupShow,setSignupShow] = useState(true);
   const navigate = useNavigate();
  
 
@@ -76,6 +77,7 @@ const SignUp = (props) => {
 
     const fetchData = async (dataa) => {
       try {
+        setSignupShow(false);
         // Simulating an asynchronous API call
         const response = await fetch('https://mushidipalli-back-end.onrender.com/users/sign_up', {
           method: 'POST',
@@ -85,6 +87,7 @@ const SignUp = (props) => {
           body: JSON.stringify(dataa)
         });
           const data =await response.json();
+          setSignupShow(true);
           console.log(data);
           if(data.message==="Signup successful"){
             toast.success('Sign_up Success', {
@@ -227,7 +230,14 @@ const SignUp = (props) => {
           <a href="https://wa.me/9133726921" rel="noreferrer" target='_blank'>< RiWhatsappLine className='contact_option_icon' /></a>
           </p>
         </div>
-        <button type="submit">Signup</button>
+        {
+          signupShow?
+          <button type="submit">Signup</button>:
+          <button >Loading...</button>
+
+
+        }
+        
 
       </form>
       <span>Already have an account ? <Link style={{color:'blue'}} to='/sign_in' >sign_in</Link></span>

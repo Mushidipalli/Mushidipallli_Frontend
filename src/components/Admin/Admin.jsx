@@ -1,19 +1,19 @@
-import './SignIn.css'
+
 import React, { useState } from 'react';
 import {toast} from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
-import { Link,Navigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
-const SingIn = (props) => {
+const Admin = (props) => {
 
   const navigate = useNavigate();
   
-  const [phoneNumber, setPhoneNumber] = useState('');
+  const [contact, setContact] = useState('');
   const [password, setPassword] = useState('');
   const [signinShow,setSignShow] = useState(true);
 
-  const handlePhoneNumberChange = (e) => {
-    setPhoneNumber(e.target.value);
+  const handleContactChange = (e) => {
+    setContact(e.target.value);
   };
 
   const handlePasswordChange = (e) => {
@@ -22,12 +22,12 @@ const SingIn = (props) => {
 
   
 
-  const handleSubmit = (e) => {
+  const handleAdminSubmit = (e) => {
     e.preventDefault();
     // TODO: Handle login logic here
 
     const dataa = {
-      contact:phoneNumber,
+      contact:contact,
       password:password
       
 
@@ -38,7 +38,7 @@ const SingIn = (props) => {
       try {
         setSignShow(false);
         // Simulating an asynchronous API call
-        const response = await fetch('https://mushidipalli-back-end.onrender.com/users/sign_in', {
+        const response = await fetch('https://mushidipalli-back-end.onrender.com/admin/login', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -54,9 +54,9 @@ const SingIn = (props) => {
             position: toast.POSITION.TOP_RIGHT
             
           });
-         
-          localStorage.setItem('authToken', data.token);
-          props.userLogin(data.user._doc);
+          
+          props.adminLogin();
+          localStorage.setItem('AdminAuthToken', data.token);
           navigate('/people');
           
           
@@ -85,16 +85,16 @@ const SingIn = (props) => {
     props.isLogin ? <Navigate to ='/people'/>:
     <div className="login-page">
      <div className='login-container' >  
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
+      <h2>Admin Login</h2>
+      <form onSubmit={handleAdminSubmit}>
         <div className="form-group">
           <input
-            type="text"
-            id="phoneNumber"
-            value={phoneNumber}
-            onChange={handlePhoneNumberChange}
+            type="number"
+            id="number"
+            value={contact}
+            onChange={handleContactChange}
             required
-            placeholder='Phone Number'
+            placeholder='Admin Id'
           />
         </div>
         <div className="form-group">
@@ -114,10 +114,10 @@ const SingIn = (props) => {
         }
         
       </form>
-      <span>don't have an account ? <Link style={{color:'blue'}} to='/sign_up' >sign_up</Link></span>
+      
       </div>
     </div>
   );
 };
 
-export default SingIn;
+export default Admin;
