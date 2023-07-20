@@ -109,7 +109,7 @@ const Admin = (props) => {
         </div>
         {signinShow?
         <button type="submit">Login</button> :
-        <button>Loading...</button>
+        <p style={{backgroundColor:'lightgreen',borderRadius:'40px' }}  >Loading...</p>
 
         }
         

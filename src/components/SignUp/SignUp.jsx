@@ -7,6 +7,7 @@ import { Link,Navigate } from 'react-router-dom';
 
 const SignUp = (props) => {
   const [phoneNumber, setPhoneNumber] = useState('');
+  const [allCorrect,setAllCorrect]=useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [gender, setGender] = useState('');
@@ -21,6 +22,19 @@ const SignUp = (props) => {
 
   const handlePhoneNumberChange = (e) => {
     setPhoneNumber(e.target.value);
+    const spantag = document.getElementById('checkNumber');
+    
+    if(e.target.value.length===10){
+      spantag.innerHTML=""
+      setAllCorrect(true)
+       
+    }else{
+      spantag.innerHTML="Phone number must be 10 digits";
+      setAllCorrect(false);
+     
+
+    }
+   
   };
 
   const handleNameChange = (e) => {
@@ -52,6 +66,17 @@ const SignUp = (props) => {
 
   }
   const handleConfirmPasswordChange = (e) => {
+    const spantag = document.getElementById('checkpassword');
+    
+    if(password!==e.target.value){
+     
+     setAllCorrect(false)
+      spantag.innerHTML='Password Miss Match';
+    }else{
+      spantag.innerHTML='';
+      setAllCorrect(true);
+      
+    }
       setConfirmPassword(e.target.value);
 
   }
@@ -130,13 +155,14 @@ const SignUp = (props) => {
         <div className="form-group">
          
           <input
-            type="text"
+            type="number"
             id="phoneNumber"
             value={phoneNumber}
             onChange={handlePhoneNumberChange}
             placeholder='Phone Number'
             required
           />
+          <span id='checkNumber' style={{color:'red'}} ></span>
         </div>
         <div className="form-group">
           
@@ -213,7 +239,7 @@ const SignUp = (props) => {
             required
           />
         </div>
-        <div className="form-group">
+        <div  className="form-group">
           
           <input
             type="text"
@@ -223,6 +249,7 @@ const SignUp = (props) => {
             onChange={handleConfirmPasswordChange}
             required
           />
+          <span id='checkpassword' style={{color:'red'}} ></span>
         </div>
         <div className="form-group">
          
@@ -230,13 +257,14 @@ const SignUp = (props) => {
           <a href="https://wa.me/9133726921" rel="noreferrer" target='_blank'>< RiWhatsappLine className='contact_option_icon' /></a>
           </p>
         </div>
-        {
+        {allCorrect? 
           signupShow?
-          <button type="submit">Signup</button>:
-          <button >Loading...</button>
+          <button id='signupSubmitButton' type="submit">Signup</button>:
+          <p style={{backgroundColor:'lightgreen',borderRadius:'40px' }}  >Loading...</p>
 
 
-        }
+          :''}
+        
         
 
       </form>

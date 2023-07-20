@@ -5,10 +5,12 @@ import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import Admin from './components/Admin/Admin';
 import Home from './components/Home/Home';
+import About from './components/About/About';
 import {toast} from 'react-toastify';
 import Lists from './components/ShowList/Lists';
 import InvalidRoute from './components/InvalidRoute';
 import SignUp from './components/SignUp/SignUp';
+import Contact from './components/Contact/Contact';
 import SingIn from './components/Signin/SignIn';
 import People from './components/People/People';
 import Profile from './components/profile/profile';
@@ -198,6 +200,8 @@ const updateProfile = async (dataa)=>{
       <Route exact path="/ponds" element={<Lists/>} />
       <Route exact path="/admin/login" element={<Admin adminLogin={adminLogin} />} />
       <Route exact path="/schools" element={<Lists/>} />
+      <Route exact path='/about' element={<About/>}/>
+      <Route exact path="/contact" element={<Contact/>}/>
       <Route exact path="/govtOffices" element={<Lists/>} />
       <Route exact path="/sign_in" element={isLoading?<LoadingPage/>:<SingIn userLogin={userLogin}  isLogin={isLogin}  />} />
       <Route exact path="/sign_up" element={isLoading?<LoadingPage/>:<SignUp isLogin={isLogin}  />} />

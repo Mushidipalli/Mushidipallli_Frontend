@@ -51,13 +51,13 @@ function Nav(props) {
               <Link to='/people' >People</Link>
             </span>
             <span>
-              <Link to='sf' >Contact</Link>
+              <Link to='/contact' >Contact</Link>
             </span>
             <span>
               {props.admin?<div onClick={()=>adminLogout()} >Logout</div>:<Link to='/admin/login' >Admin</Link>}
             </span>
             <span>
-              <Link to='sf' >About</Link>             
+              <Link to='/about' >About</Link>             
             </span>
            
             

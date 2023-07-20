@@ -22,7 +22,7 @@
  
 
  h2{
-  font-size: 2rem;
+  
   display: flex;
   padding: 2% 2% ;
   margin: 0;
@@ -32,6 +32,7 @@
  p{
   padding: 2% 2%;
   margin: 0;
+  text-align: justify;
  }
  .App {
     text-align: center;
