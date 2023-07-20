@@ -1,17 +1,14 @@
 
 :root{
 
-  --primary_color :#13220d ;
-   /* #3d5020 */
-  --secondry_color:#5dc67294;
-  /* #5e7e2d */
-  
-  --third_color:rgb(142 183 149 / 55%);
-  --background_color:#c3e8c7;
-  /* #e0e2e8 */
+ 
+  --primary_color :#101e18 ;
 
-  --my_photo_bgcolor:#17bebf;
-  --project_dataColor:black;
+  --secondry_color:#ffffff;
+ 
+  --third_color:#00846e87;
+  
+  --background_color: #29ce84;
 
   
  } 

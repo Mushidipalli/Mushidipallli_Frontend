@@ -10,7 +10,10 @@ const Contact = () => {
     <div id='contact' >
       {/* <h2>Contact Us</h2> */}
       {/* <img src='https://cdn.dribbble.com/users/87229/screenshots/2190376/sendmail.gif' > */}
-       <div className='send-email' ><p>Send Email</p></div>
+       <div className='send-email' >
+        <a href="mailto:mushidipalli.village@gmail.com" rel="noreferrer" target='_blank' >  <p>Send Email</p> </a>
+       
+      </div>
 
       
       

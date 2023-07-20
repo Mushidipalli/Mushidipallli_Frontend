@@ -7,7 +7,7 @@ import { Link,Navigate } from 'react-router-dom';
 
 const SignUp = (props) => {
   const [phoneNumber, setPhoneNumber] = useState('');
-  const [allCorrect,setAllCorrect]=useState(false);
+  const [allCorrect,setAllCorrect]=useState(true);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [gender, setGender] = useState('');

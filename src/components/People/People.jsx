@@ -210,25 +210,23 @@ const People = (props) => {
         {selectedEmployee ? (
           <div className='user-details'>
             <p onClick={handleListDecistion} className='profile-back-button' >Back</p>
-            <h3 style={{fontSize:'2rem',margin:'0'}}>Profile</h3>
+            <h3 style={{fontSize:'1.5rem',margin:'0'}}>Profile</h3>
             <img alt='person_image' className='profileImage' src={selectedEmployee.image} />
-            <p>Name: {selectedEmployee.name}</p>
-            <p>Phone: +91 {selectedEmployee.contact}</p>
-            <p>Designation: {selectedEmployee.designation}</p>
-            <p>Gender: {selectedEmployee.gender}</p>
-            <p>Permanent Address: {selectedEmployee.permanentAddress}</p>
-            <p>Current Address: {selectedEmployee.currentAddress}</p>
+            <p> <span style={{fontWeight:'600'}} >Name:</span>  {selectedEmployee.name}</p>
+            <p> <span style={{fontWeight:'600'}} >Phone:</span>  +91 {selectedEmployee.contact}</p>
+            <p> <span style={{fontWeight:'600'}} >Designation:</span> {selectedEmployee.designation}</p>
+            <p> <span style={{fontWeight:'600'}} >Gender:</span> {selectedEmployee.gender}</p>
+            <p> <span style={{fontWeight:'600'}} >Permanent Address:</span> {selectedEmployee.permanentAddress}</p>
+            <p> <span style={{fontWeight:'600'}} >Current Address:</span> {selectedEmployee.currentAddress}</p>
             {  
 
-              selectedEmployee.verified ? (<p style={{color:'green'}} >Verified</p>) : (<p style={{color:'red'}} >Not Verified</p>)
+              selectedEmployee.verified ? (<p style={{color:'green',textAlign:'center'}}  >Verified</p>) : (<p style={{color:'red',textAlign:'center'}} >Not Verified</p>)
 
             }
             {admin ?
                <div>
                 {
-                  selectedEmployee.verified ? (
-                    <p>verified</p>
-                  ): <button onClick={()=>userVerification(selectedEmployee._id)} >Verify</button>
+                  selectedEmployee.verified ?"": <button onClick={()=>userVerification(selectedEmployee._id)} >Verify</button>
 
                 }
 

@@ -1,8 +1,8 @@
 .employee-list{
     padding: 5px;
     background-color: aliceblue;
-    height: 90vh;
     overflow: hidden;
+    height: 90vh;
     overflow-y: scroll;
 }
 
@@ -36,11 +36,12 @@
 }
 .list-section{
     width: 50%;
-    padding: 10px;
+    padding: 10px 5px;
     display: flex;
     flex-direction: column;
+    background-color: var(--secondry_color);
     gap: 10px;
-    box-shadow: 0.1px 0.1px 2px 3px white;
+    box-shadow: 0.1px 0.1px 2px 3px #0000000a;
     border-radius: 10px;
     animation: opacityAnimation 0.5s ease-in-out;
    
@@ -48,10 +49,10 @@
 .list-section div{
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    padding: 6px;
     border-radius: 40px;
-    background-color:#d0f5e9;
-    box-shadow: 0.1px 0px 1px 1px #d0f5e9;
+    background-color:#29ce844a;
+    box-shadow: 0.1px 0px 1px 1px #29ce844a;
 }
 .list-section div img{
     width: 50px;
@@ -61,7 +62,7 @@
 .list-section div span{
     display: flex;
     align-items: center;
-    font-size: 15px;
+    font-size: 14px;
 }
 .img-name-container{
     display: flex;
@@ -78,8 +79,12 @@
 }
 .user-details{
     animation: opacityAnimation 0.5s ease-in-out;
+    box-shadow: 0.1px 0.1px 2px 3px #0000000a;
+    background-color: var(--secondry_color);
+    border-radius: 10px;
  
 }
+
 .profile-section p{
     margin: 0;
 }
@@ -109,6 +114,7 @@
 .profileImage{
     width: 300px;
     height: 300px;
+    border: 3px solid var(--third_color);
     border-radius: 50%;
 }
 

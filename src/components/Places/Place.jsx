@@ -4,7 +4,7 @@ function Places() {
 
     let templs = [
         {
-           image:'https://m.media-amazon.com/images/I/61w3N+3KKUL.jpg',
+           image:'https://www.pngitem.com/pimgs/m/247-2475138_hindu-temple-logo-png-transparent-png.png',
            cardTitle:'Temples',
            description:'This is a description of the card.',
            link:'/temples'

@@ -81,7 +81,7 @@
 
 }
 .ImageDivContainer {
-    background-image: url('./MushidipalliBg.jpeg');
+    background-image: url('./Mu.jpeg');
     height: 550px;
     /* background-position: center; */
     background-size: cover;
@@ -143,8 +143,9 @@
   }
   @media screen  and (max-width:600px){
     .Home-header h3{
-        margin-top: 10px;
-        font-size: 15px;
+        
+        font-size: 16px;
+        padding: 5px;
        
     }
     .paradise-section p{

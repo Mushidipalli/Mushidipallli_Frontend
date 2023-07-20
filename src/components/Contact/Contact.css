@@ -2,7 +2,8 @@
     display: flex;
     height: 70vh;
     flex-direction: column;
-    background-image: url('https://cdn.dribbble.com/users/1411423/screenshots/5318115/mail4.gif');
+    background-image: url('https://codemyui.com/wp-content/uploads/2017/07/envelope-to-paper-plane-animation.gif');
+    background-size: cover;
     background-position: center;
     align-items: center;
 }
@@ -18,13 +19,14 @@
     justify-content: center;
     align-items: center;
 }
-.send-email p{
+.send-email a{
     padding: 10px;
     border-radius: 40px;
-    box-shadow: 0.1px 1px 9px 1px #34a853;
-    background-color: #34a853;
+    box-shadow: 0.1px 1px 9px 1px var(--third_color);
+    background-color: var(--third_color);
     position: relative;
     top: 30%;
+    width: 100px;
     
 
 }

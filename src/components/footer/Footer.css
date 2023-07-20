@@ -13,6 +13,7 @@
 #Footer div p{
     color: var(--third_color);
     margin: 0;
+    text-align: center;
 }
 .social{
     display: flex;
