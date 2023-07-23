@@ -2,13 +2,19 @@
 :root{
 
  
-  --primary_color :#101e18 ;
+  --primary_color :#e6edf3 ;
 
-  --secondry_color:#ffffff;
+  --secondryPrimary_color:#C9D1D9;
+
+  --secondry_color:#161b22;
  
-  --third_color:#00846e87;
+  --content_color:#7d8590;
+
+  --border_color:#30363d;
+
+  --link_color:#2F81F7;
   
-  --background_color: #29ce84;
+  --background_color: #010409;
 
   
  } 
@@ -22,6 +28,7 @@
   
   display: flex;
   padding: 2% 2% ;
+  color: var(--secondryPrimary_color);
   margin: 0;
 
  }

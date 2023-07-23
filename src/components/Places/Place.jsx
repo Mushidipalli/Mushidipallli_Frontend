@@ -4,7 +4,7 @@ function Places() {
 
     let templs = [
         {
-           image:'https://www.pngitem.com/pimgs/m/247-2475138_hindu-temple-logo-png-transparent-png.png',
+           image:'https://i.ibb.co/ThdxJ6d/praniket-desai-c4-KZw-FRajtg-unsplash.jpg',
            cardTitle:'Temples',
            description:'This is a description of the card.',
            link:'/temples'
@@ -12,7 +12,7 @@ function Places() {
 
         },
         {
-            image:'https://img.freepik.com/free-vector/vector-clean-shiny-blue-drop-with-circles-water-close-up-front-view_1284-48012.jpg?w=2000',
+            image:'https://i.ibb.co/FwYJqXV/Clark-young-043p-Ygee8oc-unsplash.jpg',
             cardTitle:'Ponds',
             description:'This is a description of the card.',
             link:'/ponds'
@@ -20,7 +20,7 @@ function Places() {
 
          },
          {
-            image:'https://img.freepik.com/premium-vector/education-school-logo-design_586739-1335.jpg?w=2000',
+            image:'https://i.ibb.co/JFy6PYx/pexels-katerina-holmes-5905492.jpg',
             cardTitle:'Schools',
             description:'This is a description of the card.',
             link:'/schools'
@@ -28,7 +28,7 @@ function Places() {
 
          },
          {
-            image:'https://www.logopeople.in/wp-content/uploads/2013/01/government-of-india.jpg',
+            image:'https://i.ibb.co/5GtKZ2b/government.jpg',
             cardTitle:'Govt.Offices',
             description:'This is a description of the card.',
             link:'/govtOffices'
@@ -42,13 +42,29 @@ function Places() {
       <div id="Places">
         
         <div className='places-container' >
+            <div className='home-people' >
+               <Link to='/people'>
+                  <div className='home-people-section' style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url('https://i.ibb.co/swQGYF4/Nicholas-green-n-Pz8akk-Um-DI-unsplash.jpg')` }}  >
+                     <h3 className="card-head" >Explore</h3>
+                     <h3 className="card-title" style={{fontSize:'2.5rem'}} >People</h3>
+                     <div className='border-animation' ></div>
+                     
+                  </div>
+                
+               </Link>
+            </div>
             {
                 templs.map((data,index)=>(
                     
                         <span key={index} className="cards"  >
-                           <h3 className="card-title">{data.cardTitle}</h3>
+                           
                            <Link to={data.link} >
-                           <img src={data.image} alt="cardphoto" className="card-image"/>
+                           
+                           <div  className="card-image" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(${data.image})` }}  >
+                             <h3 className="card-head"  >Explore</h3>
+                             <h3 className="card-title" style={{fontSize:'2.5rem'}} >{data.cardTitle}</h3>
+                             <div className='border-animation' ></div>
+                           </div>
 
                            </Link>
                                    

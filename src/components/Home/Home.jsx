@@ -1,5 +1,6 @@
 import LoadingPage from '../LoadingPage/LoadingPage';
 import Place from '../Places/Place';
+import bg from './homeVideo.mp4'
 import './Home.css'
 function Home(props) {
   const loading = props.isLoading;
@@ -8,15 +9,24 @@ function Home(props) {
       <div className="Home">
         
         <header className="Home-header">
-          <div className='ImageDivContainer' >
-            <div className='name-container' >
-              <h3 className='welcome' >Welcome To</h3>  
-              <div  className='villageNameImage'> <span className='text'>MUSHIDIPALLI</span>   </div>
+        
+          <div className='videoDivContainer' >
 
-            </div>
+
+            <video autoPlay loop muted src={bg} style={{objectFit:'cover'}} className='bg-video' />
+            <div className='name-container'  >
+              
+                <h3 className='welcome' >Welcome To</h3>  
+                <div  >
+                  <span className='text' >MUSHIDIPALLI</span>  
+                </div>
+
+              </div>
          
-                    
+               
           </div>
+
+
           <div className='paradise-section' >
             <h2>Welcome to Paradise !</h2>
             <p>
@@ -24,10 +34,12 @@ function Home(props) {
             </p>
 
           </div>
+          
+           <h2>#Explore</h2>
           <Place/>
           <div >
             <h2>Google Map</h2>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1057.6048496914734!2d83.02829487654827!3d17.954692842665462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3bd64f028d2f9f%3A0xd53f6bb5e942410!2sSri%20Rama%20Temple!5e1!3m2!1sen!2sin!4v1689005863777!5m2!1sen!2sin" title='map' style={{border:'0',width:'90%',height:'450px'}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1057.6048496914734!2d83.02829487654827!3d17.954692842665462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3bd64f028d2f9f%3A0xd53f6bb5e942410!2sSri%20Rama%20Temple!5e1!3m2!1sen!2sin!4v1689005863777!5m2!1sen!2sin" title='map' style={{border:'0',borderRadius:'40px',width:'90%',height:'450px'}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
             {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d837.631693796417!2d83.02829487654827!3d17.954692842665462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3bd64f028d2f9f%3A0xd53f6bb5e942410!2sSri%20Rama%20Temple!5e0!3m2!1sen!2sin!4v1689005534486!5m2!1sen!2sin" title='map'   allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
           </div>
           

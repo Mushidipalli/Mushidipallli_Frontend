@@ -1,8 +1,8 @@
 #contact{
     display: flex;
-    height: 70vh;
+    height: 80vh;
     flex-direction: column;
-    background-image: url('https://codemyui.com/wp-content/uploads/2017/07/envelope-to-paper-plane-animation.gif');
+    background-image: url('https://i.ibb.co/z4bK8dX/email.gif');
     background-size: cover;
     background-position: center;
     align-items: center;
@@ -22,8 +22,8 @@
 .send-email a{
     padding: 10px;
     border-radius: 40px;
-    box-shadow: 0.1px 1px 9px 1px var(--third_color);
-    background-color: var(--third_color);
+    box-shadow: 0.1px 1px 9px 1px var(--link_color);
+    background-color: var(--link_color);
     position: relative;
     top: 30%;
     width: 100px;

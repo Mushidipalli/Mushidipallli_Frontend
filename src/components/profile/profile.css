@@ -7,6 +7,12 @@
     align-items: center;
 
 }
+.account-profile-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .account-profile-details input{
     padding: 10px;
     width: 100%;
@@ -18,9 +24,9 @@
     width: 60%;
     padding: 20px;
     display: flex;
-    background-color: #00ffbf21;
+    background-color: var(--secondry_color);
     margin: 10px 0px;
-    border-radius: 40pc 10px;
+    border-radius: 40px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -64,7 +70,6 @@
 @media screen  and (max-width:600px){
     
     .account-container{
-        border-radius: 10pc 10pc 10px 10px;
         width: 80%;
         min-width: 200px;
         

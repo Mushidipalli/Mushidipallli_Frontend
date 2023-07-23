@@ -11,9 +11,15 @@
 }
 .about-discription p{
     width: 80%;
+    color: var(--content_color);
 
 }
 .about-discription td{
-    border: 1px solid #145a2e;
+    border: 1px solid var(--border_color);
     padding: 10px;
+    color: var(--content_color);
+}
+.table-container label{
+    color: var(--secondryPrimary_color);
+
 }

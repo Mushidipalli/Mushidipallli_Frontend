@@ -1,9 +1,9 @@
 #Footer{
-    height: 25vh;
     display: flex;
     flex-direction: column;
+    gap: 10px;
     justify-content: space-around;
-    background-color: var(--primary_color);
+    border-top: 1px solid var(--border_color);
 }
 .footer-container{
     display: flex;
@@ -11,7 +11,7 @@
 }
 
 #Footer div p{
-    color: var(--third_color);
+    color: var(--content_color);
     margin: 0;
     text-align: center;
 }
@@ -24,7 +24,7 @@
 
 }
 .social a{
-    color: var(--third_color);
+    color: var(--link_color);
     margin: 0;
 }
 .address{

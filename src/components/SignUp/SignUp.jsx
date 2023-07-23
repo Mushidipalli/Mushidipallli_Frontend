@@ -260,7 +260,7 @@ const SignUp = (props) => {
         {allCorrect? 
           signupShow?
           <button id='signupSubmitButton' type="submit">Signup</button>:
-          <p style={{backgroundColor:'lightgreen',borderRadius:'40px' }}  >Loading...</p>
+          <p className='loading-button'  >Loading...</p>
 
 
           :''}
@@ -268,7 +268,7 @@ const SignUp = (props) => {
         
 
       </form>
-      <span>Already have an account ? <Link style={{color:'blue'}} to='/sign_in' >sign_in</Link></span>
+      <span>Already have an account ? <Link style={{color:'#2F81F7'}} to='/sign_in' >sign_in</Link></span>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 .login-page{
     display: flex;
-    height: 70vh;
+    height: 80vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -9,23 +9,37 @@
     
     width: 50%;
     height: 50%;
-    gap: 15%;
     padding: 20px;
     border-radius: 40px;
-    background-color: var(--third_color);
+    background-color: var(--secondry_color);
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     animation: opacityAnimation 0.5s ease-in-out;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .form-group{
     padding: 10px;
+    width: 100%;
+}
+select{
+    background-color: transparent;
+    border: 1px solid var(--border_color) !important ;
+    color: var(--content_color);
 }
 .form-group input{
     padding: 10px;
     font-size: medium;
+    background-color: transparent;
+    color: var(--content_color);
     width: 90%;
-    border:none;
+    border: 1px solid var(--border_color);
     border-radius: 40px;
 }
 .form-group input:hover{
@@ -34,14 +48,21 @@
 form button{
     padding: 10px 30px;
     border-radius: 40px;
-    background-color: #47ff59;
-    box-shadow: 0.1px 0px 1px 1px #47ff59;
+    background-color: var(--link_color);
+    color: var(--secondryPrimary_color);
+    box-shadow: 0.1px 0px 1px 1px var(--link_color);
     border: none;
 }
 form  button:hover{
-    background-color: #00ff18;
-    box-shadow: 0.1px 0px 1px 1px #00ff18;
+    
     cursor: pointer;
+}
+.loading-button{
+    border-radius: 40px;
+    width: 40%;
+    text-align: center;
+    color: var(--background_color);
+    background-color: gray;
 }
 
 @media screen  and (max-width:600px){

@@ -109,12 +109,12 @@ const SingIn = (props) => {
         </div>
         {signinShow?
         <button type="submit">Login</button> :
-        <p style={{backgroundColor:'lightgreen',borderRadius:'40px' }}  >Loading...</p>
+        <p className='loading-button' >Loading...</p>
 
         }
         
       </form>
-      <span>don't have an account ? <Link style={{color:'blue'}} to='/sign_up' >sign_up</Link></span>
+      <span>don't have an account ? <Link style={{color:'#2F81F7'}} to='/sign_up' >sign_up</Link></span>
       </div>
     </div>
   );

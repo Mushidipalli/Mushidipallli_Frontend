@@ -156,9 +156,9 @@ const People = (props) => {
         {props.isLogin ? (
           <div className='search-nav-options' >
           <span  >
-           <Link to="/profile"><img style={{width:'50px',height:'50px',borderRadius:'50%',boxShadow: '0.1px 0px 0px 5px white',}} alt='profile' src={props.accountUser.image}/> </Link>
+           <Link to="/profile"><img style={{width:'50px',height:'50px',borderRadius:'50%',boxShadow: '0.1px 0px 0px 2px white',}} alt='profile' src={props.accountUser.image}/> </Link>
           </span>
-          <span id='logout-in-home' style={{cursor:'pointer'}} onClick={handleLogout} >
+          <span id='logout-in-home' style={{cursor:'pointer',color:"#2F81F7"}} onClick={handleLogout} >
             LogOut
           </span>
 
@@ -167,11 +167,11 @@ const People = (props) => {
         ):(
           <div className='search-nav-options' >
           <span>
-            <Link to='/sign_in'  >SignIn</Link>
+            <Link style={{color:"#2F81F7"}} to='/sign_in'  >SignIn</Link>
           </span>
           <span>
             
-            <Link to='/sign_up'  >Signup</Link>
+            <Link to='/sign_up' style={{color:"#2F81F7"}} >Signup</Link>
           </span>
 
         </div> 
@@ -183,26 +183,26 @@ const People = (props) => {
       </div>
       <div className='list-profile-container' >
       <div className={`list-section ${listDecistion === true ? 'closelist' : ''}`} >
-        <div style={{borderRadius:'5px',backgroundColor:'white',boxShadow:'none'}} >
+        <div className='people-heading-container' style={{borderRadius:'5px',boxShadow:'none'}} >
           <span>Name</span>
           <span>Desigantion</span>
         </div>
-        {filteredEmployees.map((employee) => (
+        {filteredEmployees.map((employee,index) => (
           <div
-            key={employee._id}
+            key={index}
            
             onClick={() => handleEmployeeClick(employee)}
           >
            <span className='img-name-container' >
             <img alt='person_image' src={employee.image} />
-            <span style={{paddingLeft:'3px'}} >{employee.name}</span>
+            <span className='person_name' style={{paddingLeft:'3px'}} >{employee.name}</span>
             {employee.verified ? (
-              <span><VscVerifiedFilled/></span>
+              <span className='verificationTick' ><VscVerifiedFilled/></span>
             ): ''}
             
            </span> 
            
-           <span>{employee.designation}</span>
+           <span className='designation' >{employee.designation}</span>
           </div>
         ))}
       </div>
@@ -220,7 +220,7 @@ const People = (props) => {
             <p> <span style={{fontWeight:'600'}} >Current Address:</span> {selectedEmployee.currentAddress}</p>
             {  
 
-              selectedEmployee.verified ? (<p style={{color:'green',textAlign:'center'}}  >Verified</p>) : (<p style={{color:'red',textAlign:'center'}} >Not Verified</p>)
+              selectedEmployee.verified ? (<p style={{color:'rgb(47 247 75)',textAlign:'center'}}  >Verified</p>) : (<p style={{color:'rgb(247 47 47)',textAlign:'center'}} >Not Verified</p>)
 
             }
             {admin ?

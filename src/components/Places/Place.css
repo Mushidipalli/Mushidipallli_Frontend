@@ -12,16 +12,36 @@
     flex-wrap: wrap;
     gap: 20px;
     padding: 3%;
-    margin-top: 20px;
     justify-content: center;
     align-items: center;
    
 }
+.home-people{
+  width: 90%;
+  padding: 5px;
+  border-radius: 34px;
+  background-color: var(--secondry_color);
+  height: 300px;
+}
+.home-people:hover{
+  box-shadow: 0 2px 4px var(--primary_color);
+}
+.home-people-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 30px;
+  height: 100%;
+}
 
 .cards {
-    width: 300px;
-    background-color: var(--third_color);
-    border-radius: 30px;
+    width: 90%;
+    height: 300px;
+    /* background-color: var(--third_color); */
+    border-radius: 34px;
+    background-color: var(--secondry_color);
     padding: 5px;
     box-shadow: 0.1px 0.1px 3px 0.1px #00000040 ;
     overflow: hidden;
@@ -30,14 +50,20 @@
     background-color: transparent;
   }
   .cards:hover {
-    box-shadow: 0 2px 4px var(--primary_color);
+    box-shadow: 0 2px 4px var(--secondryPrimary_color);
   }
 
   .card-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
     width: 100%;
+    height: 100%;
     border-radius: 30px;
     opacity: 0.9;
-    box-shadow: 0.1px 0.1px 1px 1px white;
+   
   }
 
   .card-content {
@@ -46,8 +72,11 @@
 
   .card-title {
     margin: 0;
-    font-size: 20px;
     font-weight: bold;
+    color: var(--seco);
+  }
+  .card-head{
+    color: var(--content_color);
   }
 
   .card-description {
@@ -57,14 +86,30 @@
   .card-button {
     display: inline-block;
     padding: 8px 16px;
-    background-color: var(--primary_color);
+    background-color: var(--secondryPrimary_color);
     color: #fff;
     text-decoration: none;
     border-radius: 4px;
   }
+  .border-animation{
+    width: 50%;
+    height: 2px;
+    background-color: var(--secondryPrimary_color);
+    animation: borderAnimation 2s alternate infinite;
+  }
 
 
- 
+  @keyframes borderAnimation {
+    from{
+      width: 0;
+
+    }
+    to{
+      width: 50%;
+
+    }
+    
+  }
   @media screen  and (max-width:600px){
     
     #Places h2{
@@ -72,6 +117,11 @@
       top: 40px;
       
     }
+    .home-people{
+      width: 100%;
+    margin: 0 4% 0 4%;
+    }
+    
     .cards{
         width: 100%;
         margin: 0 4% 0 4%;

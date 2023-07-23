@@ -1,6 +1,7 @@
 import './LoadingPage.css'
 
 
+
 function LoadingPage() {
     return (
     //   <div id="LoadingPage">
@@ -15,6 +16,7 @@ function LoadingPage() {
         <div className="loading-circle">
             
         </div>
+        
         <span>Loading</span>
 
     </div>
