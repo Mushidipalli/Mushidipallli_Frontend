@@ -39,13 +39,13 @@ function Temples() {
         {
             title:'Maridamma Thalli',
             image:'https://i.ibb.co/bNPxyHL/Untitled-design-7.png',
-            description:'Paradesamma Thalli is believed to be the goddess of fertility, protector of women, and a bringer of good fortune. Devotees seek her blessings for various reasons, including the fulfillment of desires, protection from evil, and the well-being of their families. She is especially revered by women seeking fertility and the birth of healthy children.',
+            description:'Some description',
             
         },
         {
             title:'Muthyalamma Thalli',
             image:'https://i.ibb.co/DKL5WnX/Untitled-design-10.png',
-            description:'Paradesamma Thalli is believed to be the goddess of fertility, protector of women, and a bringer of good fortune. Devotees seek her blessings for various reasons, including the fulfillment of desires, protection from evil, and the well-being of their families. She is especially revered by women seeking fertility and the birth of healthy children.',
+            description:'Some description',
             
         },
         {
@@ -114,13 +114,13 @@ function Temples() {
         {
             title:'Raithu Bharosakendram',
             image:'https://scontent.fhyd1-4.fna.fbcdn.net/v/t1.6435-9/139617674_103273015089035_5479595256881993235_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=ajtHmNznJUUAX_RXONO&_nc_ht=scontent.fhyd1-4.fna&oh=00_AfBr_c7omLblo7x4l1RAGw0osb07tcDc_2dvZWOl-WLzcA&oe=64D231DC',
-            description:'',
+            description:'Some description',
             
         },
         {
             title:'Ration Shop',
             image:'https://scontent.fhyd1-4.fna.fbcdn.net/v/t1.6435-9/139617674_103273015089035_5479595256881993235_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=ajtHmNznJUUAX_RXONO&_nc_ht=scontent.fhyd1-4.fna&oh=00_AfBr_c7omLblo7x4l1RAGw0osb07tcDc_2dvZWOl-WLzcA&oe=64D231DC',
-            description:'',
+            description:'Some description',
             
         }
 

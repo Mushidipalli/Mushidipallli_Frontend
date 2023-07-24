@@ -26,6 +26,10 @@
 }
 .menu-close-logo{
     display: none;
+    background-color: var(--secondryPrimary_color);
+    text-align: center;
+    border-radius: 50%;
+    padding: 10px 10px 5px 10px;
 }
 #options-menu{
     height: auto;
@@ -57,6 +61,16 @@
 
 }
 
+@keyframes widthAnimationForOptions {
+    from{
+        width: 50px;
+    }
+    to{
+        width: 200px;
+    }
+    
+}
+
 @media screen and (max-width:1000px){
     .Nav div span a{
         margin-right: 10px;
@@ -65,6 +79,8 @@
   
     
   }
+
+
   @media screen  and (max-width:600px){
     .Nav{
         
@@ -82,14 +98,15 @@
     #options-menu{
         flex-direction: column;
         background-color: var(--background_color);
-        border-radius: 0px 0px 50px 50px;
-        height: 300px;
+        justify-content: normal;
+        height: 95vh;
+        padding-top: 5vh;
         width: 200px;
         gap: 30px;
         margin-top: 45px;
         display: none;
         z-index: 1;
-        animation: opacityAnimation 1s ease;
+        animation: widthAnimationForOptions 0.3s alternate ease;
     }
     #menu-logo{
         display: inline-block;

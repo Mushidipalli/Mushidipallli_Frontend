@@ -43,6 +43,10 @@
     font-size: 1rem;
     background-color: var(--background_color);
   }
+  input{
+    background-color: transparent;
+    border: 1px solid var(--border_color);
+  }
 
   .App-logo {
     height: 40vmin;
