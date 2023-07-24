@@ -16,9 +16,9 @@ function Home(props) {
             <video autoPlay loop muted src={bg} style={{objectFit:'cover'}} className='bg-video' />
             <div className='name-container'  >
               
-                <h3 className='welcome' >Welcome To</h3>  
-                <div  >
-                  <span className='text' >MUSHIDIPALLI</span>  
+                <h3 className='welcome' >Welcome</h3>  
+                <div id='main-heading'  >
+                  <h1 data-text= "MUSHIDIPALLI" >MUSHIDIPALLI</h1>  
                 </div>
 
               </div>
