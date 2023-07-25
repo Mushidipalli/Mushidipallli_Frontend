@@ -73,8 +73,12 @@
 
 @media screen and (max-width:1000px){
     .Nav div span a{
-        margin-right: 10px;
+        margin-right: 0px;
         font-size: 0.5rem;
+        padding: 10px 14px;
+    }
+    #options-menu{
+        display: flex;
     }
   
     

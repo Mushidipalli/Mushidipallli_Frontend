@@ -1,11 +1,11 @@
-import LoadingPage from '../LoadingPage/LoadingPage';
+
 import Place from '../Places/Place';
 import bg from './homeVideo.mp4'
 import './Home.css'
 function Home(props) {
-  const loading = props.isLoading;
+ 
     return (
-      loading?(<LoadingPage/>):
+      
       <div className="Home">
         
         <header className="Home-header">
@@ -13,7 +13,7 @@ function Home(props) {
           <div className='videoDivContainer' >
 
 
-            <video autoPlay loop muted src={bg} style={{objectFit:'cover'}} className='bg-video' />
+            <video autoPlay loop muted src={bg} preload='auto' style={{objectFit:'cover'}} className='bg-video' />
             <div className='name-container'  >
               
                 <h3 className='welcome' >Welcome</h3>  

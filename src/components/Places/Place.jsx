@@ -1,10 +1,15 @@
 import { Link } from 'react-router-dom';
 import './Place.css';
+import templeImage from './temple.png';
+import peopleImage from './people.jpg';
+import governmentImage from './government.jpg';
+import pondsImage from './ponds.jpg';
+import schoolsImage from './schoolss.jpg';
 function Places() {
 
     let templs = [
         {
-           image:'https://i.ibb.co/ThdxJ6d/praniket-desai-c4-KZw-FRajtg-unsplash.jpg',
+           image:templeImage,
            cardTitle:'Temples',
            description:'This is a description of the card.',
            link:'/temples'
@@ -12,7 +17,7 @@ function Places() {
 
         },
         {
-            image:'https://i.ibb.co/FwYJqXV/Clark-young-043p-Ygee8oc-unsplash.jpg',
+            image:pondsImage,
             cardTitle:'Ponds',
             description:'This is a description of the card.',
             link:'/ponds'
@@ -20,7 +25,7 @@ function Places() {
 
          },
          {
-            image:'https://i.ibb.co/JFy6PYx/pexels-katerina-holmes-5905492.jpg',
+            image:schoolsImage,
             cardTitle:'Schools',
             description:'This is a description of the card.',
             link:'/schools'
@@ -28,7 +33,7 @@ function Places() {
 
          },
          {
-            image:'https://i.ibb.co/5GtKZ2b/government.jpg',
+            image:governmentImage,
             cardTitle:'Govt.Offices',
             description:'This is a description of the card.',
             link:'/govtOffices'
@@ -38,13 +43,21 @@ function Places() {
     ]
 
 
+
+
+
+
+
+
+
+
     return (
       <div id="Places">
         
         <div className='places-container' >
             <div className='home-people' >
                <Link to='/people'>
-                  <div className='home-people-section' style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url('https://i.ibb.co/swQGYF4/Nicholas-green-n-Pz8akk-Um-DI-unsplash.jpg')` }}  >
+                  <div className='home-people-section' style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(${peopleImage})` }}  >
                      <h3 className="card-head" >Explore</h3>
                      <h3 className="card-title" style={{fontSize:'2.5rem'}} >People</h3>
                      <div className='border-animation' ></div>

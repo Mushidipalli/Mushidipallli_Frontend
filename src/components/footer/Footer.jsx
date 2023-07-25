@@ -1,5 +1,6 @@
 import './Footer.css'
 
+
 function Footer() {
     return (
       <div id="Footer">
@@ -29,7 +30,14 @@ function Footer() {
                 
         </div>
         <div>
-          <p>
+          <p style={{padding:'0'}} >
+            Developed by <a style={{color:'#2F81F7'}} href='https://pydamnaidudogga.netlify.app' >Pydamnaidu Dogga</a>
+          </p>
+         
+
+        </div>
+        <div>
+          <p style={{padding:'0'}} >
             @2023 Mushidipalli
 
           </p>

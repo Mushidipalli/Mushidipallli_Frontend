@@ -23,6 +23,9 @@
   background-color: var(--secondry_color);
   height: 300px;
 }
+
+
+
 .home-people:hover{
   box-shadow: 0 2px 4px var(--primary_color);
 }

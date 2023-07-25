@@ -14,6 +14,12 @@ const People = (props) => {
   const [selectedEmployee, setSelectedEmployee] = useState(null);
   const [listDecistion, setListDcsition] = useState(false);
   const admin = props.admin;
+
+
+
+  
+
+
   
   
   
@@ -224,13 +230,13 @@ const People = (props) => {
 
             }
             {admin ?
-               <div>
+               <div className='people-v-d-buttons' >
                 {
-                  selectedEmployee.verified ?"": <button onClick={()=>userVerification(selectedEmployee._id)} >Verify</button>
+                  selectedEmployee.verified ?"": <button style={{backgroundColor:'transparent'}} onClick={()=>userVerification(selectedEmployee._id)} >Verify</button>
 
                 }
 
-                 <button onClick={()=>userDeletion(selectedEmployee._id)} >Delete</button>
+                 <button style={{backgroundColor:'transparent'}} onClick={()=>userDeletion(selectedEmployee._id)} >Delete</button>
                 
       
             </div>:''}
