@@ -16,12 +16,12 @@ function Home(props) {
             <video autoPlay loop muted src={bg} preload='auto' style={{objectFit:'cover'}} className='bg-video' />
             <div className='name-container'  >
               
-                <h3 className='welcome' >Welcome</h3>  
-                <div id='main-heading'  >
-                  <h1 data-text= "MUSHIDIPALLI" >MUSHIDIPALLI</h1>  
-                </div>
-
+              <h3 className='welcome' >Welcome</h3>  
+              <div id='main-heading'  >
+                <h1 data-text= "MUSHIDIPALLI" >MUSHIDIPALLI</h1>  
               </div>
+
+            </div>
          
                
           </div>
@@ -30,12 +30,12 @@ function Home(props) {
           <div className='paradise-section' >
             <h2>Welcome to Paradise !</h2>
             <p>
-            Welcome to our village, a place of peace and simplicity. Here, you'll find hidden treasures waiting to be discovered. Our village boasts excellent schools, serene temples, and beautiful ponds. The landscapes are breathtaking, and they will leave a lasting impression on your heart and soul. Immerse yourself in our vibrant culture, which honors the traditions of our ancestors. Join us on this journey of exploration as we share captivating stories, introduce you to friendly locals, and showcase the undeniable beauty of our village. These experiences will create cherished memories that you'll treasure forever.
+              Welcome to our village, a place of peace and simplicity. Here, you'll find hidden treasures waiting to be discovered. Our village boasts excellent schools, serene temples, and beautiful ponds. The landscapes are breathtaking, and they will leave a lasting impression on your heart and soul. Immerse yourself in our vibrant culture, which honors the traditions of our ancestors. Join us on this journey of exploration as we share captivating stories, introduce you to friendly locals, and showcase the undeniable beauty of our village. These experiences will create cherished memories that you'll treasure forever.
             </p>
 
           </div>
           
-           <h2>#Explore</h2>
+          <h2>#Explore</h2>
           <Place/>
           <div >
             <h2>Google Map</h2>

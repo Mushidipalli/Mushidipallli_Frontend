@@ -1,8 +1,8 @@
 .employee-list{
     padding: 5px;
-    overflow: hidden;
-    height: 90vh;
-    overflow-y: scroll;
+    padding-top: 60px;
+    min-height: 76.5vh;
+   
 }
 
 .search-section{
@@ -169,6 +169,10 @@
     
 }
 @media screen  and (max-width:600px){
+    .employee-list{
+        padding-top: 53px;
+        min-height: 74vh;
+    }
     .list-section{
         width: 90%;
         min-width: 350px;

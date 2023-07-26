@@ -8,7 +8,7 @@
     display: flex;
     justify-content: space-between;
     height: auto;
-    border-bottom: 1.3px solid var(--border_color);
+    
     padding: 15px 0px;
 }
 #villageName{
@@ -107,7 +107,7 @@
         padding-top: 5vh;
         width: 200px;
         gap: 30px;
-        margin-top: 45px;
+        /* margin-top: 45px; */
         display: none;
         z-index: 1;
         animation: widthAnimationForOptions 0.3s alternate ease;

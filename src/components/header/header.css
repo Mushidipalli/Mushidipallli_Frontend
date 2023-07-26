@@ -1,3 +1,16 @@
+#Header{
+  position: fixed;
+  z-index: 5;
+  height: auto;
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+.blurred-nav{
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  
+}
+
 .Header-header{
   display: flex;
   justify-content: space-between;

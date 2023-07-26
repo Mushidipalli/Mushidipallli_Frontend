@@ -1,6 +1,7 @@
 .signup-page{
     display: flex;
-    padding: 5% 0;
+    padding: 7% 0;
+    
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -10,7 +11,6 @@
 
 .signup-container{
     width: 50%;
-   
     gap: 10%;
     padding: 20px;
     border-radius: 40px;
@@ -39,7 +39,7 @@
 }
 @media screen  and (max-width:600px){
     .signup-page{
-        padding: 10% 0;
+        padding: 60px 0 10px 0px;
     }
     .signup-container{
         width: 80%;

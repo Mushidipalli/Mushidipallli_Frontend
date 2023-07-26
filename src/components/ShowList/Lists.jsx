@@ -1,6 +1,16 @@
 import './Lists.css';
 import { useMatch } from 'react-router-dom';
-
+import paradesamma from './paradesamma.jpg';
+import durgamma from './durgamma.jpg';
+import maridamma from './maridamma.jpg';
+import muthyalamma from './muthyalamma.jpg';
+import chinthalamma from './chinthalamma.jpg';
+import pydithalamma from './pydithalamma.jpg';
+import hanuman1 from './hanuman1.jpg';
+import hanuman2 from './hanuman2.jpg';
+import sriramtemple1 from './sriramtemple1.jpg';
+import sriramtemple2 from './sriramtemple2.jpg';
+import krishnatemple from './krishnatemple.jpg';
 
 
 
@@ -26,33 +36,74 @@ function Temples() {
     const TemplesList = [
         {
             title:'Paradhesamma Thalli',
-            image:'https://i.ibb.co/61vmtgw/Untitled-design-1.png',
+            image:paradesamma,
             description:'Paradesamma Thalli is believed to be the goddess of fertility, protector of women, and a bringer of good fortune. Devotees seek her blessings for various reasons, including the fulfillment of desires, protection from evil, and the well-being of their families. She is especially revered by women seeking fertility and the birth of healthy children.',
             
         },
         {
             title:'Durgamma Thalli',
-            image:'https://i.ibb.co/GsSkLWJ/Untitled-design-4.png',
+            image:durgamma,
             description:'Goddess Durga has always been a divine object for meditation, Bhakti, prayers and guidance since ages. She is deeply gloried by in the Durga Chalisa, Forty-hymn treatise that vividly praises Her presence, conquest of enemies, Vedic wisdom and mercy on the conditioned souls living on Earth.',
             
         },
         {
             title:'Maridamma Thalli',
-            image:'https://i.ibb.co/bNPxyHL/Untitled-design-7.png',
+            image:maridamma,
             description:'Some description',
             
         },
         {
             title:'Muthyalamma Thalli',
-            image:'https://i.ibb.co/DKL5WnX/Untitled-design-10.png',
+            image:muthyalamma,
             description:'Some description',
             
         },
         {
             title:'Chinthalamma Thalli',
-            image:'https://i.ibb.co/jvWw1rw/Untitled-design-14.png',
+            image:chinthalamma,
             description:'Some description',
             
+        },
+        {
+            title:'pydithalamma Thalli',
+            image:pydithalamma,
+            description:'Some description',
+            
+        },
+        {
+            title:'Hanuman temple',
+            image:hanuman1,
+            description:'Some description',
+            
+        },
+        {
+            title:'Hanuman temple',
+            image:hanuman1,
+            description:'Some description',
+            
+        },
+        {
+            title:'Hanuman temple',
+            image:hanuman2,
+            description:'Some description',
+            
+        },
+        {
+            title:'Sriram temple',
+            image:sriramtemple1,
+            description:'Some description',
+            
+        },
+        {
+            title:'Sriram temple',
+            image:sriramtemple2,
+            description:'Some description',
+            
+        },
+        {
+            title:'Sri krishna temple',
+            image:krishnatemple,
+            description:'Some description',
         }
 
     ] 
@@ -155,7 +206,7 @@ function Temples() {
                 <div key={index}    className='data-container'   >
                     {/* <img className="data-image" src={data.image}  alt='data_image'  /> */}
                     <div className="data-image" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(${data.image})` }} >
-                        <h2 style={{color:'white',borderBottom:'1px solid'}} >{data.title}</h2>
+                        <h2 style={{borderBottom:'1px solid'}} >{data.title}</h2>
 
                     </div>
                     <div className="data-description" >
