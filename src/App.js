@@ -15,6 +15,7 @@ import SingIn from './components/Signin/SignIn';
 import People from './components/People/People';
 import Profile from './components/profile/profile';
 import LoadingPage from './components/LoadingPage/LoadingPage';
+import axios from 'axios'
 
 
 
@@ -29,6 +30,46 @@ function App() {
   const [accountUser,setAccountUser] = useState('');
   const [isLogin,setIsLogin] = useState(false);
   const [showButton, setShowButton] = useState(true);
+  const [visitors, setVisitors]= useState([]);
+  
+
+
+
+  const getData = async () => {
+    try {
+      const res = await axios.get("https://api.ipify.org/?format=json");
+  
+      
+      const data = {
+        ip:res.data.ip
+      }
+      const visitorsCount = await axios.post("https://mushidipalli-back-end.onrender.com/visitors",data);
+
+      const visitorsString =visitorsCount.data.visitcount.toString();
+      let tempArray = [];
+      
+     for(let i=0; i<visitorsString.length;i++){
+      
+      tempArray.push(visitorsString[i]);
+      
+       }
+      
+      setVisitors(tempArray);
+      
+      
+    } catch (error) {
+      
+    }
+    
+  };
+
+ 
+
+
+
+
+
+
 
 const userLogin = (dataa) => {
   setAccountUser(dataa);
@@ -61,6 +102,8 @@ const userLogout = ()=>{
 
 
 useEffect(()=>{
+
+  getData();
 
   const fetchData = async ()=>{
 
@@ -173,7 +216,6 @@ const updateProfile = async (dataa)=>{
 
 
 
-
   
 
   
@@ -195,7 +237,7 @@ const updateProfile = async (dataa)=>{
     <Router>
     <Header admin={admin} adminLogout={adminLogout} /> 
     <Routes>
-      <Route exact path="/" element={<Home  isLoading={isLoading} />} />
+      <Route exact path="/" element={<Home  visitors={visitors}  isLoading={isLoading} />} />
       <Route exact path="/temples" element={<Lists/>} />
       <Route exact path="/ponds" element={<Lists/>} />
       <Route exact path="/admin/login" element={<Admin adminLogin={adminLogin} />} />

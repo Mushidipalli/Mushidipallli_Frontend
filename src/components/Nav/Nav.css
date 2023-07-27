@@ -13,9 +13,12 @@
 }
 #villageName{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+   
 }
+
 
 #menu-logo{
     display: none;
@@ -49,7 +52,7 @@
     border-radius: 40px;
     margin-right: 30px;
     /* background-color: var(--secondry_color); */
-    border: 1px solid var(--border_color);
+   
 }
 #villageName a {
     background-color:transparent;
@@ -125,6 +128,7 @@
     .Nav div span a{
         text-decoration: none;
         padding: 10px 20px 10px 20px;
+        border: 1px solid var(--border_color);
         margin: 0;
         
     }

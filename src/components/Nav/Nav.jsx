@@ -38,6 +38,7 @@ function Nav(props) {
         <header className="Nav-header">
             <div id='villageName' >
               <span> <Link to='/' >MUSHIDIPALLI</Link></span>
+              
             </div>
             <div id='menu-logo' onClick={()=>openMenu()} >
               <HiMenu />

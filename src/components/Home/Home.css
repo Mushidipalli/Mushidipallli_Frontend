@@ -14,7 +14,6 @@
     top:-10%;
     font-family: monospace;
     font-size: 2rem;
-    opacity: 0.5;
     border-radius: 10px;
     overflow: hidden;
     background-color: #0000005c;
@@ -40,7 +39,7 @@
     overflow: hidden;
     min-width: 320px;
     width:100vW ;
-    height: 70vh;
+    height: 100vh;
 
 }
 .bg-video{
@@ -55,11 +54,11 @@
     min-width: 320px;
     display: flex;
     flex-direction: column;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.2);
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 65vh;
+    height: 95vh;
 }
 .paradise-section p{
 
@@ -75,7 +74,7 @@
 #main-heading h1{
     font-family: 'Teko', sans-serif;
     text-transform: uppercase;
-    text-shadow: 1px 1px darkslategray;
+    text-shadow: 1px 1px var(--primary_color);
     font-size: 7rem;
     text-align: center;
     display: -webkit-flex;
@@ -104,6 +103,30 @@
     clip-path: ellipse(120px 120px at -2.54% -9.25%);
     animation: swing 5s infinite;
     animation-direction: alternate;
+  }
+
+
+  #count-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    height: 200px;
+  }
+  #couters-container{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    border: 1px solid var(--border_color);
+    padding: 10px;
+    align-items: center;
+
+  }
+  .counters{
+    
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: var(--secondry_color);
   }
   
   @keyframes swing{
@@ -154,6 +177,9 @@
     
   }
   @media screen  and (max-width:600px){
+    .videoDivContainer{
+        height: 70vh;
+    }
     #main-heading h1{
         font-size: 2.5rem;
     }
@@ -165,6 +191,7 @@
     }
     .name-container{
         top: 50px;
+        height: 65vh;
     }
     .paradise-section p{
         padding: 3%;
