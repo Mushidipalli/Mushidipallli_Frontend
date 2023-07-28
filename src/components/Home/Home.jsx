@@ -1,15 +1,26 @@
 
 import Place from '../Places/Place';
 import bg from './homeVideo.mp4'
-import './Home.css'
+import './Home.css';
+import { useState,useEffect } from 'react';
+import LoadingPage from '../LoadingPage/LoadingPage';
 function Home(props) {
+  const [homeLoad,setHomeLoad] = useState(true);
+
+  useEffect(() => {
+    const delay = setTimeout(() => {
+      setHomeLoad(false); // Set isLoading to false after a delay (you can replace this with your actual content loading logic)
+    }, 1000); // Change the value (in milliseconds) based on your content loading time
+
+    return () => clearTimeout(delay);
+  }, []);
 
 
 
  
  
     return (
-      
+      homeLoad ? <LoadingPage/>:
       <div className="Home">
         
         <header className="Home-header">
@@ -22,7 +33,7 @@ function Home(props) {
               
               <h3 className='welcome' >Welcome</h3>  
               <div id='main-heading'  >
-                <h1 data-text= "MUSHIDIPALLI" >MUSHIDIPALLI</h1>  
+                <h1  >MUSHIDIPALLI</h1>  
               </div>
 
             </div>
