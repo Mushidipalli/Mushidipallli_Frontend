@@ -2,6 +2,7 @@ import './Nav.css';
 import {HiMenu} from 'react-icons/hi' ;
 import {GrClose} from 'react-icons/gr';
 import { Link } from 'react-router-dom';
+import logoM  from './mushidipalli.logo.png';
 function Nav(props) {
 
   function openMenu (){
@@ -37,7 +38,7 @@ function Nav(props) {
         
         <header className="Nav-header">
             <div id='villageName' >
-              <span> <Link to='/' >MUSHIDIPALLI</Link></span>
+              <span> <Link to='/' ><img src={logoM} alt='M' /></Link></span>
               
             </div>
             <div id='menu-logo' onClick={()=>openMenu()} >

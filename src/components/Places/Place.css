@@ -17,7 +17,8 @@
    
 }
 .home-people{
-  width: 90%;
+  width: 60%;
+  min-width: 600px;
   padding: 5px;
   border-radius: 34px;
   background-color: var(--secondry_color);
@@ -40,7 +41,8 @@
 }
 
 .cards {
-    width: 90%;
+    width: 31%;
+    min-width: 300px;
     height: 300px;
     /* background-color: var(--third_color); */
     border-radius: 34px;
@@ -76,7 +78,7 @@
   .card-title {
     margin: 0;
     font-weight: bold;
-    color: var(--seco);
+    color: var(--secondryPrimary_color);
   }
   .card-head{
     color: var(--content_color);
@@ -115,14 +117,18 @@
   }
   @media screen  and (max-width:600px){
     
+  }
+  @media screen  and (max-width:600px){
+    
     #Places h2{
       
       top: 40px;
       
     }
     .home-people{
+      min-width: 300px;
       width: 100%;
-    margin: 0 4% 0 4%;
+      margin: 0 4% 0 4%;
     }
     
     .cards{

@@ -1,0 +1,59 @@
+.profile-section{
+    display: flex;
+    height: 80vh;
+    opacity: 1;
+    padding: 100px 0px 50px 0px ;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    overflow-y: scroll;
+    
+   
+}
+
+.profile-section p{
+    margin: 0;
+    color: var(--content_color);
+}
+.profile-section p span{
+    color: var(--secondryPrimary_color);
+}
+
+.user-details{
+    animation: opacityAnimation 0.5s ease-in-out;
+    box-shadow: 0.1px 0.1px 2px 3px #0000000a;
+    background-color: var(--secondry_color);
+    border-radius: 10px;
+ 
+}
+
+.people-v-d-buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+ .people-v-d-buttons button{
+    padding: 10px;
+    border-radius: 40px;
+ }
+
+ .profileImage{
+    width: 300px;
+    height: 300px;
+    border: 3px solid var(--third_color);
+    border-radius: 50%;
+}
+
+
+@media screen  and (max-width:600px){
+    .profile-section{
+        
+        padding-top: 80px 0px 10px 0px ;
+    }
+
+    .user-details{
+        width: 90%;
+    }
+}

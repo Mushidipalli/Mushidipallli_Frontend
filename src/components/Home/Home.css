@@ -59,7 +59,7 @@
 }
 .name-container{
     position: absolute;
-    top: 64.5px;
+    top: 0;
     min-width: 320px;
     display: flex;
     flex-direction: column;
@@ -67,7 +67,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 95vh;
+    height: 100vh;
 }
 .paradise-section p{
 
@@ -196,11 +196,10 @@
        
     }
     .name-container{
-        top: 50px;
-        height: 65vh;
+        height: 70vh;
     }
     .paradise-section p{
-        padding: 3%;
+        padding: 3% 5%;
     }
     
   

@@ -1,7 +1,6 @@
 import './People.css';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import {toast} from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import {VscVerifiedFilled} from 'react-icons/vsc';
 import LoadingPage from '../LoadingPage/LoadingPage';
@@ -11,17 +10,10 @@ import LoadingPage from '../LoadingPage/LoadingPage';
 const People = (props) => {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedEmployee, setSelectedEmployee] = useState(null);
-  const [listDecistion, setListDcsition] = useState(false);
-  const admin = props.admin;
-
-
-
-  
-
-
+  const selectPerson = props.setPerson;
   
   
+
   
 
   const handleSearchTermChange = (e) => {
@@ -30,111 +22,15 @@ const People = (props) => {
 
 
 
-  const userVerification= async(data)=>{
 
-    const dataa ={
-      id:data
-    }
-
-    const authToken = localStorage.getItem('AdminAuthToken');
-  
-
-  try {
-    // Simulating an asynchronous API call
-    const response = await fetch('https://mushidipalli-back-end.onrender.com/admin/users/verify', {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-        'authorization': authToken
-      },
-      body: JSON.stringify(dataa)
-     
-    });
-       await response.json();
-       
-      if(response.ok){
-        toast.success('User Verified Successful', {
-          position: toast.POSITION.TOP_RIGHT
-          
-        });
-        
-       
-      }else{
-        toast.warning('Update faild', {
-          position: toast.POSITION.TOP_RIGHT
-          
-        });
-
-      }
-
-  } catch (error) {
-   
-
-  }
-
-  }
-
-
-
-  const handleListDecistion = () => {
-    setListDcsition(false);
-    setSelectedEmployee("");
-  }
-
-
-  const handleEmployeeClick = (employee) => {
-    setSelectedEmployee(employee);
-    setListDcsition(true);
+  const handlePersonClick = (employee) => {
+    selectPerson(employee)
+    
     
   };
 
 
-  const userDeletion = async (data)=>{
-
-
-    const dataa ={
-      id:data
-    }
-
-    const authToken = localStorage.getItem('AdminAuthToken');
   
-
-  try {
-    // Simulating an asynchronous API call
-    const response = await fetch('https://mushidipalli-back-end.onrender.com/admin/users/delete', {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-        'authorization': authToken
-      },
-      body: JSON.stringify(dataa)
-     
-    });
-       await response.json();
-       
-      if(response.ok){
-        toast.success('User Deleted Successful', {
-          position: toast.POSITION.TOP_RIGHT
-          
-        });
-        
-       
-      }else{
-        toast.warning('faild to Delete', {
-          position: toast.POSITION.TOP_RIGHT
-          
-        });
-
-      }
-
-  } catch (error) {
-   
-
-  }
-
-
-    
-  }
  
 
   const handleLogout = () => {
@@ -188,65 +84,33 @@ const People = (props) => {
         
       </div>
       <div className='list-profile-container' >
-      <div className={`list-section ${listDecistion === true ? 'closelist' : ''}`} >
+      <div className="list-section" >
         <div className='people-heading-container' style={{borderRadius:'5px',boxShadow:'none'}} >
           <span>Name</span>
           <span>Desigantion</span>
         </div>
-        {filteredEmployees.map((employee,index) => (
+        {filteredEmployees.map((person,index) => (
+          <Link key={index} to={`/${person.name}/profile`} >
           <div
-            key={index}
+            
            
-            onClick={() => handleEmployeeClick(employee)}
+            onClick={() => handlePersonClick(person)}
           >
            <span className='img-name-container' >
-            <img alt='person_image' src={employee.image} />
-            <span className='person_name' style={{paddingLeft:'3px'}} >{employee.name}</span>
-            {employee.verified ? (
+            <img alt='person_image' src={person.image} />
+            <span className='person_name' style={{paddingLeft:'3px'}} >{person.name}</span>
+            {person.verified ? (
               <span className='verificationTick' ><VscVerifiedFilled/></span>
             ): ''}
             
            </span> 
            
-           <span className='designation' >{employee.designation}</span>
+           <span className='designation' >{person.designation}</span>
           </div>
+          </Link>
         ))}
       </div>
-      <div className="profile-section">
-        {selectedEmployee ? (
-          <div className='user-details'>
-            <p onClick={handleListDecistion} className='profile-back-button' >Back</p>
-            <h3 style={{fontSize:'1.5rem',margin:'0'}}>Profile</h3>
-            <img alt='person_image' className='profileImage' src={selectedEmployee.image} />
-            <p> <span style={{fontWeight:'600'}} >Name:</span>  {selectedEmployee.name}</p>
-            <p> <span style={{fontWeight:'600'}} >Phone:</span>  +91 {selectedEmployee.contact}</p>
-            <p> <span style={{fontWeight:'600'}} >Designation:</span> {selectedEmployee.designation}</p>
-            <p> <span style={{fontWeight:'600'}} >Gender:</span> {selectedEmployee.gender}</p>
-            <p> <span style={{fontWeight:'600'}} >Permanent Address:</span> {selectedEmployee.permanentAddress}</p>
-            <p> <span style={{fontWeight:'600'}} >Current Address:</span> {selectedEmployee.currentAddress}</p>
-            {  
-
-              selectedEmployee.verified ? (<p style={{color:'rgb(47 247 75)',textAlign:'center'}}  >Verified</p>) : (<p style={{color:'rgb(247 47 47)',textAlign:'center'}} >Not Verified</p>)
-
-            }
-            {admin ?
-               <div className='people-v-d-buttons' >
-                {
-                  selectedEmployee.verified ?"": <button style={{backgroundColor:'transparent'}} onClick={()=>userVerification(selectedEmployee._id)} >Verify</button>
-
-                }
-
-                 <button style={{backgroundColor:'transparent'}} onClick={()=>userDeletion(selectedEmployee._id)} >Delete</button>
-                
       
-            </div>:''}
-            
-            
-            {/* Add more employee details here */}
-          </div>
-        ) : ''}
-          
-      </div>
       </div>
       
     </div>

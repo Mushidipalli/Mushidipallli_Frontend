@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route,Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route,Routes,useLocation } from 'react-router-dom';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import Admin from './components/Admin/Admin';
@@ -15,7 +15,8 @@ import SingIn from './components/Signin/SignIn';
 import People from './components/People/People';
 import Profile from './components/profile/profile';
 import LoadingPage from './components/LoadingPage/LoadingPage';
-import axios from 'axios'
+import axios from 'axios';
+import PeopleProfile from './components/PeopleProfile/PeopleProfile';
 
 
 
@@ -31,6 +32,12 @@ function App() {
   const [isLogin,setIsLogin] = useState(false);
   const [showButton, setShowButton] = useState(true);
   const [visitors, setVisitors]= useState([]);
+  const [selectedPerson, setSelectedPerson] = useState('');
+
+
+  const person = (data)=>{
+    setSelectedPerson(data);
+  }
   
 
 
@@ -235,6 +242,7 @@ const updateProfile = async (dataa)=>{
      <React.StrictMode>
      
     <Router>
+    <ScrollToTop />
     <Header admin={admin} adminLogout={adminLogout} /> 
     <Routes>
       <Route exact path="/" element={<Home  visitors={visitors}  isLoading={isLoading} />} />
@@ -245,9 +253,10 @@ const updateProfile = async (dataa)=>{
       <Route exact path='/about' element={<About/>}/>
       <Route exact path="/contact" element={<Contact/>}/>
       <Route exact path="/govtOffices" element={<Lists/>} />
+      <Route exact path ="/:name/profile"  element={<PeopleProfile   person={selectedPerson} admin={admin}  />}/>
       <Route exact path="/sign_in" element={isLoading?<LoadingPage/>:<SingIn userLogin={userLogin}  isLogin={isLogin}  />} />
       <Route exact path="/sign_up" element={isLoading?<LoadingPage/>:<SignUp isLogin={isLogin}  />} />
-      <Route exact path="/people" element = {<People isLoading={isLoading} users={users} admin={admin} userLogout={userLogout} isLogin={isLogin} accountUser={accountUser} />} />
+      <Route exact path="/people" element = {<People isLoading={isLoading} setPerson={person} users={users} admin={admin} userLogout={userLogout} isLogin={isLogin} accountUser={accountUser} />} />
       <Route exact path="/profile" element = {isLoading?<LoadingPage/>:<Profile accountUser={accountUser} showButton={showButton} isLogin={isLogin} updateProfile={updateProfile} userLogout={userLogout} />} />
 
       
@@ -268,5 +277,16 @@ const updateProfile = async (dataa)=>{
     </div>
   );
 }
+
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
 
 export default App;

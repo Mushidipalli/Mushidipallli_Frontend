@@ -83,59 +83,16 @@
     display: flex;
     
 }
-.profile-section{
-    display: flex;
-    width: 50%;
-    opacity: 1;
-    flex-direction: column;
-    align-items: center;
-    
-   
-}
-.user-details{
-    animation: opacityAnimation 0.5s ease-in-out;
-    box-shadow: 0.1px 0.1px 2px 3px #0000000a;
-    background-color: var(--secondry_color);
-    border-radius: 10px;
- 
-}
 
-.profile-section p{
-    margin: 0;
-    color: var(--content_color);
-}
-.profile-section p span{
-    color: var(--secondryPrimary_color);
-}
 
-.profile-back-button{
-    position: fixed;
-    top: 200px;
-    left: 10px;
-    padding: 10px 20px;
-    
-    background-color: var(--background_color);
-}
-.profile-back-button:hover{
-    cursor: pointer;
-}
 
-.employee{
-    display: 0;
-}
-/* .active{
-    display: flex;
-    animation: opacityAnimation 1s ease;
-} */
-.closelist{
-    display: none;
-}
-.profileImage{
-    width: 300px;
-    height: 300px;
-    border: 3px solid var(--third_color);
-    border-radius: 50%;
-}
+
+
+
+
+
+
+
 
 #logout-in-home{
     display: flex;
@@ -144,17 +101,7 @@
 }
 
 
-.people-v-d-buttons{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
- .people-v-d-buttons button{
-    padding: 10px;
-    border-radius: 40px;
- }
+
 
 
 
@@ -177,9 +124,7 @@
         width: 90%;
         min-width: 350px;
     }
-    .profile-section{
-        width: 90%;
-    }
+   
     .search-section input{
         padding: 10px;
     }
@@ -192,9 +137,7 @@
        justify-content: center;
 
     }
-    .profile-back-button{
-        top: 120px;
-    }
+   
    
     #logout-in-home{
         display: none;

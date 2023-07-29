@@ -5,13 +5,25 @@ function Header(props) {
 
   window.onscroll = function () {
     const currentScrollPos = window.scrollY;
+    const element= document.getElementById("Header");
     
 
-    if (prevScrollPos < currentScrollPos || prevScrollPos > currentScrollPos ) {
-      document.getElementById("Header").classList.add("blurred-nav");
-    } 
+    if (prevScrollPos < currentScrollPos) {
+      element.style.display='none'
+      
+    } else if(prevScrollPos > currentScrollPos ){
+      element.style.display='block';
+      element.style.boxShadow='1px 1px 5px 1px black';
+      element.classList.add("blurred-nav");
+      element.style.backgroundColor='#00000085';
+      
+
+    }
     if(currentScrollPos===0){
-      document.getElementById("Header").classList.remove("blurred-nav");
+     element.classList.remove('blurred-nav');
+     element.style.backgroundColor=''
+     element.style.boxShadow='';
+     
 
     }
 

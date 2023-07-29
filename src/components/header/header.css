@@ -1,9 +1,11 @@
 #Header{
   position: fixed;
   z-index: 5;
-  height: auto;
+  height: 60.94px;
+  overflow: hidden;
   width: 100%;
-  background-color: rgba(0,0,0,0.2);
+  animation: heightAnimationForHeader-d 0.5s alternate;
+
 }
 .blurred-nav{
   backdrop-filter: blur(3px);
@@ -25,17 +27,36 @@
 
 }
 
+@keyframes heightAnimationForHeader-m {
+  from{
+      height: 0;
 
-@media screen and (max-width:1000px){
-  .Header-header h1{
-      font-size: 1.3rem ;
+  }
+  to{
+      height: 50px;
+
+  }
+  
+}
+@keyframes heightAnimationForHeader-d {
+  from{
+      height: 0;
+
+  }
+  to{
+      height: 60.94px;
 
   }
   
 }
 @media screen  and (max-width:600px){
-  .Header-header h1{
-    font-size: 1rem;
+  #Header{
+    height: 50px;
+    animation: heightAnimationForHeader-m 0.5s alternate;
+
   }
-  
 }
+
+
+
+
