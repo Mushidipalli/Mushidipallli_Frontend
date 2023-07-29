@@ -4,7 +4,7 @@
   height: 60.94px;
   overflow: hidden;
   width: 100%;
-  animation: heightAnimationForHeader-d 0.5s alternate;
+  animation: OpacityAnimationForHeader 0.4s alternate;
 
 }
 .blurred-nav{
@@ -27,32 +27,22 @@
 
 }
 
-@keyframes heightAnimationForHeader-m {
+@keyframes OpacityAnimationForHeader {
   from{
-      height: 0;
+      opacity: 0;
 
   }
   to{
-      height: 50px;
+      opacity: 1;
 
   }
   
 }
-@keyframes heightAnimationForHeader-d {
-  from{
-      height: 0;
 
-  }
-  to{
-      height: 60.94px;
-
-  }
-  
-}
 @media screen  and (max-width:600px){
   #Header{
     height: 50px;
-    animation: heightAnimationForHeader-m 0.5s alternate;
+    animation: OpacityAnimationForHeader 0.4s alternate ease;
 
   }
 }

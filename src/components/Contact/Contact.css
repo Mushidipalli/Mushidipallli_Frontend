@@ -1,6 +1,6 @@
 #contact{
     display: flex;
-    height: 80vh;
+    height: 83vh;
     flex-direction: column;
     background-image: url('https://i.ibb.co/z4bK8dX/email.gif');
     background-size: cover;
@@ -32,6 +32,13 @@
 }
 .send-email p:hover{
     cursor: pointer;
+}
+
+@media screen  and (max-width:600px) {
+    #contact{
+        height: 80vh;
+    }
+    
 }
 
 
