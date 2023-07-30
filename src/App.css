@@ -21,14 +21,14 @@
  } 
 
  *{
-  color: var(--primary_color);
+  color: var(--secondryPrimary_color);
  }
  
 
  h2{
   
   display: flex;
-  padding: 2% 2%;
+  padding: 2% 2% 2% 3%;
   color: var(--secondryPrimary_color);
   margin: 0;
 
@@ -98,6 +98,7 @@ a:hover{
 @media screen  and (max-width:600px){
   h2{
     padding: 2% 2% 2% 6%;
+    font-size: 1.6rem;
 
   }
   

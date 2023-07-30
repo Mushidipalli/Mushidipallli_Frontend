@@ -24,7 +24,7 @@
 
 }
 .social a{
-    color: var(--link_color);
+    color: var(--secondryPrimary_color);
     margin: 0;
 }
 .address{

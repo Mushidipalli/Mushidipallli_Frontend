@@ -205,12 +205,12 @@ function Temples() {
             
                 <div key={index}    className='data-container'   >
                     {/* <img className="data-image" src={data.image}  alt='data_image'  /> */}
-                    <div className="data-image" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(${data.image})` }} >
-                        <h2 style={{borderBottom:'1px solid'}} >{data.title}</h2>
+                    <div className="data-image" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)),url(${data.image})` }} >
+                        
 
                     </div>
                     <div className="data-description" >
-                        
+                        <h2 style={{borderBottom:'1px solid'}} >{data.title}</h2>
                         <p>{data.description}</p> 
                         <button >see more</button>  
                     </div>

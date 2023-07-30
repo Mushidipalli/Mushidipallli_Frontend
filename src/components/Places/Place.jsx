@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import './Place.css';
 import templeImage from './temple.png';
-import peopleImage from './people.jpg';
+import peopleImage from './people.jpeg';
 import governmentImage from './government.jpg';
 import pondsImage from './ponds.jpg';
-import schoolsImage from './schoolss.jpg';
+import schoolsImage from './school.jpeg';
 function Places() {
 
     let templs = [
