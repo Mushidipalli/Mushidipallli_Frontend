@@ -25,6 +25,10 @@
   height: 300px;
 }
 
+.exploreanimation{
+  animation:  exploreSectionAnimation 1s;
+}
+
 
 
 .home-people:hover{
@@ -105,6 +109,17 @@
     background-color: var(--secondryPrimary_color);
     animation: borderAnimation 2s alternate infinite;
   }
+ @keyframes exploreSectionAnimation {
+  from{
+    opacity: 0;
+
+  }
+  to{
+    opacity: 1;
+
+  }
+  
+ }
 
 
   @keyframes borderAnimation {

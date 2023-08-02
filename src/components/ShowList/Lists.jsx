@@ -11,6 +11,8 @@ import hanuman2 from './hanuman2.jpg';
 import sriramtemple1 from './sriramtemple1.jpg';
 import sriramtemple2 from './sriramtemple2.jpg';
 import krishnatemple from './krishnatemple.jpg';
+import useIntersection from '../useIntersection';
+import { useRef } from 'react';
 
 
 
@@ -49,7 +51,7 @@ function Temples() {
         {
             title:'Maridamma Thalli',
             image:maridamma,
-            description:'Some description',
+            description:'',
             
         },
         {
@@ -61,7 +63,7 @@ function Temples() {
         {
             title:'Chinthalamma Thalli',
             image:chinthalamma,
-            description:'Some description',
+            description:'Grama devatha,',
             
         },
         {
@@ -192,41 +194,59 @@ function Temples() {
     if(matchGovt){
         displayData = GvotList
     }
+
+    return (
+        <>
+         <div id="Lists">
+            <div className="data-out-container">
+            
+               {displayData.map((data, index) => (
+                  <Card key={index} data={data} />
+               ))}
+            </div>   
+            
+   
+         </div>
+          
+        </>
+      );
+    };
     
 
 
+    const Card = ({ data }) => {
+        const elementRef = useRef(null);
+        const isVisible = useIntersection(elementRef, '0px',0.5);
 
     return (
-      <div id="Lists">
-        <div  className='data-out-container' >
-
-        {
-            displayData.map((data,index)=>(
-            
-                <div key={index}    className='data-container'   >
-                    {/* <img className="data-image" src={data.image}  alt='data_image'  /> */}
-                    <div className="data-image" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)),url(${data.image})` }} >
-                        
-
-                    </div>
-                    <div className="data-description" >
-                        <h2 style={{borderBottom:'1px solid'}} >{data.title}</h2>
-                        <p>{data.description}</p> 
-                        <button >see more</button>  
-                    </div>
+        
+        <div className={isVisible ? 'main-data-container' : 'hide'}  style={{width:'100%',height:'95vh',display:'flex',justifyContent:'center',alignItems:'center'}}  ref={elementRef}  >
+           {isVisible ? (      
+            <div className='data-container' >
+                <div className="data-image rightAnimation" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)),url(${data.image})` }} >
                 </div>
-          
+                <div className="data-description leftAnimation " >
+                    <h2 style={{borderBottom:'1px solid'}} >{data.title}</h2>
+                    <p>{data.description}</p> 
+                    <button >see more</button>  
+                </div>
+            </div>
+            ) :(
+                <div className='data-container' >
+                <div className="data-image" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)),url(${data.image})` }} >
+                </div>
+                <div className="data-description " >
+                    <h2 style={{borderBottom:'1px solid'}} >{data.title}</h2>
+                    <p>{data.description}</p> 
+                    <button >see more</button>  
+                </div>
+              </div>
+            )}  
+        </div>
+
+                
 
 
-            ))
-            
-        }
-          </div>
-
-       
-        
-        
-      </div>
     );
   }
   
