@@ -76,7 +76,7 @@ const Place = () => {
  const Card = ({ data }) => {
    const elementRef = useRef(null);
    const isVisible = useIntersection(elementRef, '0px',0);
-   console.log(isVisible);
+   
  
    return (
      <span className="cards" ref={elementRef}>
