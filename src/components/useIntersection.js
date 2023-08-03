@@ -22,7 +22,7 @@ const useIntersection = (element, rootMargin,customThreshold) => {
         observer.unobserve(currentElement);
       }
     };
-  }, [element, rootMargin]);
+  }, [element, rootMargin, customThreshold]);
 
   return isVisible;
 };
