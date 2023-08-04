@@ -20,9 +20,11 @@
 }
 
 .user-details{
+   
     animation: opacityAnimation 0.5s ease-in-out;
     box-shadow: 0.1px 0.1px 2px 3px #0000000a;
     background-color: var(--secondry_color);
+    width: 500px;
     border-radius: 10px;
  
 }

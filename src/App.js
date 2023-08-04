@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
+import bg from '../src/components/Home/homeVideo.mp4'
 import { BrowserRouter as Router, Route,Routes,useLocation } from 'react-router-dom';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
@@ -17,11 +18,21 @@ import Profile from './components/profile/profile';
 import LoadingPage from './components/LoadingPage/LoadingPage';
 import axios from 'axios';
 import PeopleProfile from './components/PeopleProfile/PeopleProfile';
+import ListPage from './components/ListPage/ListPage';
+import Sachivalayam from './components/GovtOffices/Sachivalayam/Sachivalayam';
+import RaithuBharosakendram from './components/GovtOffices/RaithuBharosakendram/RaithuBharosakendram';
+import VillageClinic from './components/GovtOffices/VillageClinic/VillageClinic';
+import RationShop from './components/GovtOffices/RationShop/RationShop';
+import Zph from './components/Schools/Zph';
 
 
 
 
 function App() {
+
+
+
+
 
 
   
@@ -33,6 +44,9 @@ function App() {
   const [showButton, setShowButton] = useState(true);
   const [visitors, setVisitors]= useState([]);
   const [selectedPerson, setSelectedPerson] = useState('');
+  const [homeLoad,setHomeLoad] = useState(true);
+  const [visitorsLoaded,setViaitorsLoaded] = useState(false);
+  const [listItem,setListItem]=useState('');
 
 
   const person = (data)=>{
@@ -42,7 +56,7 @@ function App() {
 
 
 
-  const getData = async () => {
+  const getIp = async () => {
     try {
       const res = await axios.get("https://api.ipify.org/?format=json");
   
@@ -62,6 +76,7 @@ function App() {
        }
       
       setVisitors(tempArray);
+      setViaitorsLoaded(true)
       
       
     } catch (error) {
@@ -78,8 +93,8 @@ function App() {
 
 
 
-const userLogin = (dataa) => {
-  setAccountUser(dataa);
+const userLogin = (data) => {
+  setAccountUser(data);
   setIsLogin(true);
  
 };
@@ -91,6 +106,9 @@ const adminLogin=()=>{
 
 const adminLogout =()=>{
   setAdmin(false);
+}
+const handleforlistItem=(data)=>{
+  setListItem(data)
 }
 
 
@@ -110,7 +128,7 @@ const userLogout = ()=>{
 
 useEffect(()=>{
 
-  getData();
+  getIp();
 
   const fetchData = async ()=>{
 
@@ -222,6 +240,15 @@ const updateProfile = async (dataa)=>{
 }
 
 
+useEffect(() => {
+  const delay = setTimeout(() => {
+    setHomeLoad(false); // Set isLoading to false after a delay (you can replace this with your actual content loading logic)
+  }, 1000); // Change the value (in milliseconds) based on your content loading time
+
+  return () => clearTimeout(delay);
+}, []);
+
+
 
   
 
@@ -240,27 +267,31 @@ const updateProfile = async (dataa)=>{
      
 
      <React.StrictMode>
-     
+    
     <Router>
-    <ScrollToTop />
     <Header admin={admin} adminLogout={adminLogout} /> 
+    <ScrollToTop />
     <Routes>
-      <Route exact path="/" element={<Home  visitors={visitors}  isLoading={isLoading} />} />
-      <Route exact path="/temples" element={<Lists/>} />
-      <Route exact path="/ponds" element={<Lists/>} />
+      <Route exact path="/" element={homeLoad?<LoadingPage/>:<Home bg={bg} visitors={visitors} visitorsLoaded={visitorsLoaded} />} />
+      <Route exact path="/temples" element={<Lists setlistitem={handleforlistItem} />} />
+      <Route exact path="/ponds" element={<Lists setlistitem={handleforlistItem} />} />
+      <Route exact path="/schools" element={<Lists setlistitem={handleforlistItem} />} />
+      <Route exact path="/govtOffices" element={<Lists setlistitem={handleforlistItem} />} />
       <Route exact path="/admin/login" element={<Admin adminLogin={adminLogin} />} />
-      <Route exact path="/schools" element={<Lists/>} />
+      <Route exact path='/temples/:item' element={<ListPage listItem={listItem} />} />
+      <Route exact path='/ponds/:item' element={<ListPage listItem={listItem} />} />
+      <Route exact path='/govt/Sachivalayam' element={<Sachivalayam />} />
+      <Route exact path='/govt/RaithuBharosakendram' element={<RaithuBharosakendram />} />
+      <Route exact path='/govt/VillageClinic' element={<VillageClinic />} />
+      <Route exact path='/govt/RationShop' element={<RationShop />} />
+      <Route exact path='/schools/ZPH_school' element={<Zph />} />
       <Route exact path='/about' element={<About/>}/>
       <Route exact path="/contact" element={<Contact/>}/>
-      <Route exact path="/govtOffices" element={<Lists/>} />
       <Route exact path ="/:name/profile"  element={<PeopleProfile   person={selectedPerson} admin={admin}  />}/>
       <Route exact path="/sign_in" element={isLoading?<LoadingPage/>:<SingIn userLogin={userLogin}  isLogin={isLogin}  />} />
       <Route exact path="/sign_up" element={isLoading?<LoadingPage/>:<SignUp isLogin={isLogin}  />} />
       <Route exact path="/people" element = {<People isLoading={isLoading} setPerson={person} users={users} admin={admin} userLogout={userLogout} isLogin={isLogin} accountUser={accountUser} />} />
       <Route exact path="/profile" element = {isLoading?<LoadingPage/>:<Profile accountUser={accountUser} showButton={showButton} isLogin={isLogin} updateProfile={updateProfile} userLogout={userLogout} />} />
-
-      
-
       <Route path='*' element={<InvalidRoute/>}/>
       
     </Routes>

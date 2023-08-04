@@ -6,6 +6,9 @@
     justify-content: center;
     align-items: center;
 }
+#loading-container img{
+  animation: 1s logoM;
+}
 
 
 .loading-circle {
@@ -20,8 +23,23 @@
   @keyframes spin {
     from {
       transform: rotate(0deg);
+      opacity: -1;
     }
     to {
       transform: rotate(360deg);
+      opacity: 1;
+    }
+  }
+
+  @keyframes logoM {
+    from{
+      width: 500px;
+      height: 500px;
+
+    }
+    to{
+      width: 40px;
+      height: 40px;
+
     }
   }

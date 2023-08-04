@@ -108,6 +108,15 @@
     margin: 0;
     color: var(--content_color);
 }
+.data-description a{
+    border: 1px solid var(--border_color);
+    padding: 10px;
+    border-radius: 30px;
+    color: var(--link_color);
+    box-shadow: 0.1px 1px;
+    background-color: var(--border_color);
+    font-size: 0.8rem;
+}
 
 @keyframes listLeftAnimation {
     from{
