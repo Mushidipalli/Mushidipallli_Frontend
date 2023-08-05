@@ -1,11 +1,12 @@
 import React from 'react';
 import './Zph.css';
+import video from '../ListPage/devotional.mp4';
 
 function Zph() {
   return (
     <div>
         <div className='list-videoDivContainer' >
-        <video autoPlay loop muted src='' preload='auto' style={{objectFit:'cover'}} className='bg-video' />
+        <video autoPlay loop muted src={video} preload='auto' style={{objectFit:'cover'}} className='bg-video' />
   
         <div className='list-name-container'  >
 
@@ -18,6 +19,7 @@ function Zph() {
 
 
       </div>
+      <h1>content adding soon</h1>
       
     </div>
   )

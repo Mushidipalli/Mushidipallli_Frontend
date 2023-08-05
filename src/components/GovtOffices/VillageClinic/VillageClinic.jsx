@@ -1,11 +1,11 @@
 import React from 'react';
 import './VillageClinic.css';
-
+import video from '../../ListPage/devotional.mp4';
 function VillageClinic() {
   return (
     <div>
         <div className='list-videoDivContainer' >
-        <video autoPlay loop muted src='' preload='auto' style={{objectFit:'cover'}} className='bg-video' />
+        <video autoPlay loop muted src={video} preload='auto' style={{objectFit:'cover'}} className='bg-video' />
   
         <div className='list-name-container'  >
 
@@ -18,6 +18,7 @@ function VillageClinic() {
 
 
       </div>
+      <h1>content adding soon</h1>
       
     </div>
   )

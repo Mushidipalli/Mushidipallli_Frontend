@@ -51,6 +51,13 @@ function Temples(props) {
             link:'/temples/durgamma_thalli'
         },
         {
+            title:'Chinthalamma Thalli',
+            image:chinthalamma,
+            description:'Grama devatha,',
+            link:'/temples/chinthalamma_thalli'
+            
+        },
+        {
             title:'Maridamma Thalli',
             image:maridamma,
             description:'',
@@ -62,13 +69,6 @@ function Temples(props) {
             image:muthyalamma,
             description:'Some description',
             link:'/temples/muthyalamma_thalli'
-            
-        },
-        {
-            title:'Chinthalamma Thalli',
-            image:chinthalamma,
-            description:'Grama devatha,',
-            link:'/temples/chinthalamma_thalli'
             
         },
         {

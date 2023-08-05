@@ -1,6 +1,7 @@
 
 import './Sachivalayam.css';
 import avatar from '../avatar.jpg';
+import video from '../../ListPage/devotional.mp4';
 
 function Sachivalayam() {
   const sachivalayamEmployes  = [
@@ -152,7 +153,7 @@ function Sachivalayam() {
   return (
     <div id='sachivalayam' >
       <div className='list-videoDivContainer' >
-        <video autoPlay loop muted src='' preload='auto' style={{objectFit:'cover'}} className='bg-video' />
+        <video autoPlay loop muted src={video} preload='auto' style={{objectFit:'cover'}} className='bg-video' />
   
         <div className='list-name-container'  >
 
