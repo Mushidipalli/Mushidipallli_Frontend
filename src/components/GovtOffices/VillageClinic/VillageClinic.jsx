@@ -18,7 +18,11 @@ function VillageClinic() {
 
 
       </div>
-      <h1>content adding soon</h1>
+      <div className="content-container">
+        <h1>content adding soon</h1>
+
+      </div>
+      
       
     </div>
   )
